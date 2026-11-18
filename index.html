@@ -3,44 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aydan Eyvazzade — Parcours, Produit & Expérience Client</title>
-  <meta name="description" content="Parcours complet d'Aydan Eyvazzade : CJM Researcher, Chercheuse en Expérience Client (CX), Product Owner et étudiante en Master 1 S2IN à Annecy." />
-
-  <!-- Partage LinkedIn / WhatsApp -->
-  <meta property="og:title" content="Aydan Eyvazzade — Product Owner & CX Researcher" />
-  <meta property="og:description" content="Version complète de mon parcours : modélisation de parcours clients (CJM), recherche UX/CX B2B et gestion de produit digital." />
-  <meta property="og:image" content="img/og-preview.jpg" />
-  <meta property="og:type" content="website" />
-
-  <!-- Typographies éditoriales -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-
+  <title>Aydan Eyvazzade — Product Owner & CX / CJM Researcher</title>
   <style>
     /* ==========================================================================
-       PALETTE CHAUDE & VARIABLES ÉDITORIALES
+       BASE ERGONOMIQUE NEUTRE (SANS DESIGN GRAPHIQUE — STRUCTURE PURE)
        ========================================================================== */
-    :root {
-      --paper: #fbf9f5;
-      --paper-alt: #f3efe6;
-      --surface: #ffffff;
-      --ink: #1c1917;
-      --ink-soft: #44403c;
-      --ink-muted: #78716c;
-      --terracotta: #9f3a26;
-      --terracotta-soft: #f9ece8;
-      --slate: #264653;
-      --slate-soft: #eaf0f2;
-      --line: #e4ddd0;
-      --line-strong: #cfc5b4;
-      --serif: 'Fraunces', Georgia, serif;
-      --sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      --mono: 'JetBrains Mono', monospace;
-      --max-w: 1040px;
-      --transition: all 0.25s ease;
-    }
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -53,1595 +20,798 @@
     }
 
     body {
-      background-color: var(--paper);
-      color: var(--ink);
-      font-family: var(--sans);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.65;
+      color: #111111;
+      background-color: #ffffff;
+      padding-bottom: 4rem;
     }
 
-    h1, h2, h3 {
-      font-family: var(--serif);
-      font-weight: 600;
-      color: var(--ink);
-      line-height: 1.2;
-      letter-spacing: -0.015em;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    ul {
-      list-style: none;
-    }
-
+    /* Largeur de colonne optimale pour la lecture (65 à 75 caractères par ligne) */
     .container {
-      width: 100%;
-      max-width: var(--max-w);
+      max-width: 760px;
       margin: 0 auto;
-      padding: 0 1.4rem;
+      padding: 0 1.25rem;
     }
 
-    /* ==========================================================================
-       NAVIGATION DISCRÈTE
-       ========================================================================== */
-    .topbar {
+    /* Navigation collante minimaliste */
+    nav {
       position: sticky;
       top: 0;
-      z-index: 90;
-      background: rgba(251, 249, 245, 0.92);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--line);
+      background: #f8f8f8;
+      border-bottom: 1px solid #d4d4d4;
+      padding: 0.75rem 0;
+      z-index: 100;
     }
 
-    .topbar-inner {
+    nav .container {
       display: flex;
-      align-items: center;
+      flex-wrap: wrap;
       justify-content: space-between;
-      height: 64px;
-    }
-
-    .monogram {
-      font-family: var(--serif);
-      font-weight: 700;
-      font-size: 1.15rem;
-      display: flex;
       align-items: center;
-      gap: 0.5rem;
-    }
-
-    .monogram span {
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      font-weight: 400;
-      color: var(--ink-muted);
-      padding-left: 0.5rem;
-      border-left: 1px solid var(--line-strong);
-    }
-
-    .nav-menu {
-      display: flex;
-      align-items: center;
-      gap: 1.6rem;
-    }
-
-    .nav-menu a {
-      font-size: 0.9rem;
-      color: var(--ink-soft);
-      transition: var(--transition);
-    }
-
-    .nav-menu a:hover {
-      color: var(--terracotta);
-    }
-
-    .nav-contact-link {
-      font-family: var(--mono);
-      font-size: 0.78rem !important;
-      color: var(--terracotta) !important;
-      border-bottom: 1px solid var(--terracotta);
-      padding-bottom: 2px;
-    }
-
-    .burger-btn {
-      display: none;
-      background: transparent;
-      border: 1px solid var(--line-strong);
-      border-radius: 6px;
-      padding: 0.35rem 0.65rem;
-      font-family: var(--mono);
-      font-size: 0.8rem;
-      color: var(--ink);
-      cursor: pointer;
-    }
-
-    /* ==========================================================================
-       HERO : ACCUEIL POST-QR CODE
-       ========================================================================== */
-    .hero {
-      padding: 3.5rem 0 4rem;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .qr-note {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-family: var(--mono);
-      font-size: 0.76rem;
-      color: var(--terracotta);
-      background: var(--terracotta-soft);
-      padding: 0.35rem 0.8rem;
-      border-radius: 4px;
-      margin-bottom: 1.75rem;
-    }
-
-    .hero-layout {
-      display: grid;
-      grid-template-columns: 1.45fr 0.85fr;
-      gap: 3.5rem;
-      align-items: start;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.4rem, 5vw, 3.6rem);
-      font-weight: 700;
-      margin-bottom: 0.6rem;
-    }
-
-    .hero-roles {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: clamp(1.15rem, 2.2vw, 1.45rem);
-      color: var(--terracotta);
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-intro {
-      font-size: 1.05rem;
-      color: var(--ink-soft);
-      margin-bottom: 1.25rem;
-      max-width: 590px;
-    }
-
-    .hero-intro strong {
-      color: var(--ink);
-      font-weight: 600;
-    }
-
-    /* Fil rouge géographique */
-    .route-strip {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.65rem;
-      margin: 1.75rem 0 2rem;
-      padding: 0.85rem 1rem;
-      background: var(--paper-alt);
-      border-left: 3px solid var(--terracotta);
-      font-family: var(--mono);
-      font-size: 0.78rem;
-      color: var(--ink-soft);
-    }
-
-    .route-strip span.city {
-      color: var(--ink);
-      font-weight: 500;
-    }
-
-    .hero-links {
-      display: flex;
-      flex-wrap: wrap;
       gap: 0.75rem;
     }
 
-    .btn-editorial {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      padding: 0.7rem 1.25rem;
-      font-size: 0.9rem;
-      font-weight: 500;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: var(--transition);
-      border: 1px solid var(--ink);
-    }
-
-    .btn-fill {
-      background: var(--ink);
-      color: var(--paper);
-    }
-
-    .btn-fill:hover {
-      background: var(--terracotta);
-      border-color: var(--terracotta);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--ink);
-      border-color: var(--line-strong);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--ink);
-      background: var(--surface);
-    }
-
-    /* Cadre photo façon tirage éditorial */
-    .photo-frame {
-      background: var(--surface);
-      padding: 0.75rem 0.75rem 1rem;
-      border: 1px solid var(--line);
-      box-shadow: 0 12px 30px -15px rgba(28, 25, 23, 0.14);
-      border-radius: 4px;
-    }
-
-    .photo-slot {
-      width: 100%;
-      overflow: hidden;
-      background: var(--paper-alt);
-      position: relative;
-    }
-
-    .photo-slot.portrait {
-      aspect-ratio: 4 / 5;
-    }
-
-    .photo-slot.wide {
-      aspect-ratio: 16 / 10;
-    }
-
-    .photo-slot.campus {
-      aspect-ratio: 4 / 3;
-    }
-
-    .photo-slot img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .photo-caption {
-      margin-top: 0.65rem;
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      color: var(--ink-muted);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .photo-placeholder {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      height: 100%;
-      padding: 1.5rem;
-      border: 1.5px dashed var(--line-strong);
-      color: var(--ink-muted);
-    }
-
-    .photo-placeholder code {
-      font-family: var(--mono);
-      font-size: 0.78rem;
-      color: var(--terracotta);
-      background: var(--surface);
-      padding: 0.2rem 0.5rem;
-      border-radius: 3px;
-      border: 1px solid var(--line);
-      margin-bottom: 0.45rem;
-    }
-
-    .photo-placeholder p {
-      font-size: 0.8rem;
-      max-width: 230px;
-      line-height: 1.45;
-    }
-
-    /* ==========================================================================
-       SECTIONS & TITRES ÉDITORIAUX
-       ========================================================================== */
-    section {
-      padding: 4.5rem 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .section-head {
-      display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 2rem;
-      margin-bottom: 3rem;
-      align-items: baseline;
-    }
-
-    .section-index {
-      font-family: var(--mono);
-      font-size: 0.78rem;
-      color: var(--terracotta);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .section-head h2 {
-      font-size: clamp(1.75rem, 3.2vw, 2.35rem);
-    }
-
-    .section-lead {
-      color: var(--ink-soft);
-      margin-top: 0.65rem;
-      max-width: 620px;
-      font-size: 1rem;
-    }
-
-    /* ==========================================================================
-       01. CE QUI ME GUIDE (APPROCHE PERSONNELLE)
-       ========================================================================== */
-    .story-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 3rem;
-      align-items: start;
-    }
-
-    .story-notes {
-      display: grid;
-      gap: 1.75rem;
-    }
-
-    .note-block {
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .note-block:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .note-block h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.45rem;
-    }
-
-    .note-block p {
-      color: var(--ink-soft);
-      font-size: 0.96rem;
-    }
-
-    /* ==========================================================================
-       02. EXPÉRIENCES (INDEX CHRONOLOGIQUE ÉPURÉ)
-       ========================================================================== */
-    .tabs-bar {
+    .nav-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 2.5rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid var(--line);
+      gap: 1rem;
+      font-size: 0.9rem;
     }
 
-    .tab-btn {
-      background: transparent;
-      border: 1px solid transparent;
-      padding: 0.45rem 0.9rem;
-      font-family: var(--sans);
-      font-size: 0.88rem;
-      font-weight: 500;
-      color: var(--ink-muted);
-      border-radius: 4px;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-
-    .tab-btn:hover {
-      color: var(--ink);
-      background: var(--paper-alt);
-    }
-
-    .tab-btn.active {
-      color: var(--ink);
-      background: var(--paper-alt);
-      border-color: var(--line-strong);
-      font-weight: 600;
-    }
-
-    .exp-list {
-      display: grid;
-    }
-
-    .exp-row {
-      display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 2rem;
-      padding: 2.25rem 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .exp-row:first-child {
-      padding-top: 0.5rem;
-    }
-
-    .exp-row:last-child {
-      border-bottom: none;
-    }
-
-    .exp-row.hidden {
-      display: none;
-    }
-
-    .exp-aside {
-      font-family: var(--mono);
-      font-size: 0.78rem;
-      color: var(--ink-muted);
-    }
-
-    .exp-period {
-      display: inline-block;
-      color: var(--ink);
-      font-weight: 500;
-      margin-bottom: 0.25rem;
-    }
-
-    .exp-period.now {
-      color: var(--terracotta);
-    }
-
-    .exp-place {
-      display: block;
-      margin-bottom: 0.65rem;
-    }
-
-    .exp-sector {
-      display: inline-block;
-      font-size: 0.72rem;
-      padding: 0.2rem 0.5rem;
-      background: var(--paper-alt);
-      border: 1px solid var(--line);
-      border-radius: 3px;
-      color: var(--ink-soft);
-    }
-
-    .exp-body h3 {
-      font-size: 1.32rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .exp-org {
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--terracotta);
-      margin-bottom: 1rem;
-    }
-
-    .exp-org a {
+    .nav-links a {
+      color: #111111;
       text-decoration: underline;
       text-underline-offset: 3px;
-      margin-left: 0.35rem;
-      font-size: 0.85rem;
-      color: var(--ink-muted);
     }
 
-    .exp-org a:hover {
-      color: var(--terracotta);
+    /* Typographie & Hiérarchie */
+    header {
+      padding: 2.5rem 0 2rem;
+      border-bottom: 2px solid #111111;
     }
 
-    .exp-tasks {
-      display: grid;
-      gap: 0.5rem;
-      margin-bottom: 1.15rem;
-    }
-
-    .exp-tasks li {
-      position: relative;
-      padding-left: 1.15rem;
-      font-size: 0.95rem;
-      color: var(--ink-soft);
-    }
-
-    .exp-tasks li::before {
-      content: "—";
-      position: absolute;
-      left: 0;
-      color: var(--terracotta);
+    .badge-qr {
+      display: inline-block;
+      font-size: 0.8rem;
       font-weight: 600;
-    }
-
-    .exp-keywords {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.45rem;
-    }
-
-    .kw {
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      color: var(--slate);
-      background: var(--slate-soft);
-      padding: 0.2rem 0.55rem;
-      border-radius: 3px;
-    }
-
-    /* ==========================================================================
-       03. FORMATION & PARCOURS ACADÉMIQUE
-       ========================================================================== */
-    .edu-entries {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.75rem;
-      margin-bottom: 3rem;
-    }
-
-    .edu-box {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      padding: 1.75rem;
-      border-radius: 4px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .edu-box.highlight {
-      border-top: 3px solid var(--terracotta);
-    }
-
-    .edu-meta {
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      color: var(--ink-muted);
-      margin-bottom: 0.5rem;
-      display: block;
-    }
-
-    .edu-box h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.3rem;
-    }
-
-    .edu-inst {
-      font-size: 0.92rem;
-      font-weight: 500;
-      color: var(--terracotta);
+      background: #efefef;
+      border: 1px solid #cccccc;
+      padding: 0.25rem 0.6rem;
       margin-bottom: 1rem;
     }
 
-    .edu-points {
-      display: grid;
-      gap: 0.45rem;
-      font-size: 0.91rem;
-      color: var(--ink-soft);
+    h1 {
+      font-size: 2.1rem;
+      line-height: 1.2;
+      margin-bottom: 0.35rem;
     }
 
-    .edu-points li {
-      padding-left: 1rem;
-      position: relative;
+    .subtitle {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #333333;
+      margin-bottom: 1rem;
     }
 
-    .edu-points li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: var(--terracotta);
-    }
-
-    .thesis-note {
-      margin-top: 1.25rem;
-      padding: 0.85rem 1rem;
-      background: var(--paper-alt);
-      border-left: 2px solid var(--slate);
-      font-size: 0.86rem;
-      color: var(--ink-soft);
-    }
-
-    .thesis-note strong {
-      color: var(--ink);
-    }
-
-    /* Certifications + Photo Campus */
-    .cert-split {
-      display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 2.5rem;
-      align-items: center;
-      padding: 2rem;
-      background: var(--paper-alt);
-      border: 1px solid var(--line);
-      border-radius: 4px;
-    }
-
-    .cert-split h3 {
-      font-size: 1.3rem;
-      margin-bottom: 1.15rem;
-    }
-
-    .cert-rows {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .cert-row {
-      padding-bottom: 0.9rem;
-      border-bottom: 1px solid var(--line-strong);
-    }
-
-    .cert-row:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .cert-row strong {
-      display: block;
-      font-size: 0.96rem;
-      color: var(--ink);
-    }
-
-    .cert-row span {
-      font-size: 0.86rem;
-      color: var(--ink-soft);
-    }
-
-    /* ==========================================================================
-       04. LANGUES & BOÎTE À OUTILS
-       ========================================================================== */
-    .tools-layout {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 3rem;
-    }
-
-    .skills-categories {
-      display: grid;
-      gap: 1.5rem;
-    }
-
-    .skill-cat h3 {
-      font-family: var(--mono);
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--terracotta);
-      margin-bottom: 0.65rem;
-    }
-
-    .skill-inline-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .skill-chip {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      padding: 0.35rem 0.75rem;
-      font-size: 0.86rem;
-      color: var(--ink);
-      border-radius: 3px;
-    }
-
-    .lang-table {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      padding: 1.75rem;
-      border-radius: 4px;
-    }
-
-    .lang-table h3 {
-      font-size: 1.25rem;
+    .intro-text {
+      font-size: 1.02rem;
+      color: #222222;
       margin-bottom: 1.25rem;
     }
 
-    .lang-row {
-      padding: 0.85rem 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .lang-row:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .lang-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 0.25rem;
-    }
-
-    .lang-top strong {
-      font-size: 1rem;
-      color: var(--ink);
-    }
-
-    .lang-badge {
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      color: var(--terracotta);
-      font-weight: 500;
-    }
-
-    .lang-sub {
-      font-size: 0.84rem;
-      color: var(--ink-muted);
-    }
-
-    /* ==========================================================================
-       05. CONTACT DIRECT
-       ========================================================================== */
-    .contact-section {
-      border-bottom: none;
-      padding-bottom: 3rem;
-    }
-
-    .contact-panel {
-      background: var(--ink);
-      color: var(--paper);
-      padding: 3rem 2.5rem;
-      border-radius: 4px;
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 2.5rem;
-      align-items: center;
-    }
-
-    .contact-panel h2 {
-      color: var(--paper);
-      font-size: clamp(1.7rem, 3vw, 2.2rem);
-      margin-bottom: 0.75rem;
-    }
-
-    .contact-panel p {
-      color: #d6d3d1;
-      font-size: 0.96rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .contact-actions {
+    /* Barre d'actions directes (ergonomie mobile post-QR code) */
+    .quick-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
+      gap: 0.6rem;
+      margin-top: 1.25rem;
     }
 
-    .btn-light {
-      background: var(--paper);
-      color: var(--ink);
-      border-color: var(--paper);
+    .btn {
+      display: inline-block;
+      padding: 0.55rem 0.95rem;
+      border: 1px solid #111111;
+      background: #ffffff;
+      color: #111111;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
     }
 
-    .btn-light:hover {
-      background: var(--terracotta);
-      border-color: var(--terracotta);
+    .btn-primary {
+      background: #111111;
       color: #ffffff;
     }
 
-    .btn-dark-outline {
-      background: transparent;
-      color: var(--paper);
-      border-color: #57534e;
+    /* Sections */
+    section {
+      padding: 2.5rem 0;
+      border-bottom: 1px solid #dddddd;
     }
 
-    .btn-dark-outline:hover {
-      border-color: var(--paper);
-    }
-
-    .contact-coords {
-      display: grid;
-      gap: 0.85rem;
-      font-size: 0.9rem;
-    }
-
-    .coord-link {
-      display: flex;
-      flex-direction: column;
-      padding: 0.75rem 1rem;
-      background: rgba(255, 255, 255, 0.05);
-      border-left: 2px solid var(--terracotta);
-      transition: var(--transition);
-    }
-
-    .coord-link:hover {
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    .coord-label {
-      font-family: var(--mono);
-      font-size: 0.7rem;
+    h2 {
+      font-size: 1.45rem;
+      margin-bottom: 0.5rem;
       text-transform: uppercase;
-      color: #a8a29e;
-      margin-bottom: 0.15rem;
+      letter-spacing: 0.03em;
     }
 
-    footer {
-      padding: 2rem 0 3rem;
-      border-top: 1px solid var(--line);
-      font-family: var(--mono);
-      font-size: 0.76rem;
-      color: var(--ink-muted);
+    .section-desc {
+      color: #444444;
+      margin-bottom: 1.5rem;
+      font-size: 0.96rem;
+    }
+
+    /* Bloc "En 30 secondes" */
+    .tldr-box {
+      background: #f6f6f6;
+      border-left: 4px solid #111111;
+      padding: 1.25rem 1.4rem;
+      margin-top: 1.5rem;
+    }
+
+    .tldr-box h3 {
+      font-size: 1rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .tldr-box ul {
+      padding-left: 1.2rem;
+    }
+
+    .tldr-box li {
+      margin-bottom: 0.45rem;
+    }
+
+    /* Grille Header avec photo */
+    .header-grid {
+      display: grid;
+      grid-template-columns: 1fr 190px;
+      gap: 1.75rem;
+      align-items: start;
+    }
+
+    /* Emplacements images (Wireframe) */
+    .img-wireframe {
+      border: 1px dashed #888888;
+      background: #f9f9f9;
+      padding: 0.75rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #555555;
+    }
+
+    .img-wireframe img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .img-wireframe code {
+      display: block;
+      font-weight: 700;
+      color: #111111;
+      margin-bottom: 0.25rem;
+    }
+
+    /* Cartes d'expérience épurées */
+    .exp-controls {
       display: flex;
-      justify-content: space-between;
       flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
       gap: 0.75rem;
+      margin-bottom: 1.5rem;
     }
 
-    /* Toast discret */
-    .toast {
-      position: fixed;
-      bottom: 1.5rem;
-      right: 1.5rem;
-      background: var(--ink);
-      color: var(--paper);
-      font-family: var(--mono);
-      font-size: 0.78rem;
-      padding: 0.75rem 1.1rem;
-      border-left: 3px solid var(--terracotta);
-      border-radius: 3px;
-      opacity: 0;
-      transform: translateY(10px);
-      pointer-events: none;
-      transition: var(--transition);
-      z-index: 200;
+    .filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
     }
 
-    .toast.visible {
-      opacity: 1;
-      transform: translateY(0);
+    .filter-btn {
+      padding: 0.35rem 0.75rem;
+      border: 1px solid #bbbbbb;
+      background: #ffffff;
+      font-size: 0.85rem;
+      cursor: pointer;
     }
 
-    /* ==========================================================================
-       RESPONSIVE MOBILE
-       ========================================================================== */
-    @media (max-width: 880px) {
-      .hero-layout,
-      .section-head,
-      .story-grid,
-      .exp-row,
-      .edu-entries,
-      .cert-split,
-      .tools-layout,
-      .contact-panel {
+    .filter-btn.active {
+      background: #111111;
+      color: #ffffff;
+      border-color: #111111;
+      font-weight: 600;
+    }
+
+    .exp-item {
+      padding: 1.4rem 0;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .exp-item:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .exp-item.hidden {
+      display: none;
+    }
+
+    .exp-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .exp-top h3 {
+      font-size: 1.18rem;
+    }
+
+    .exp-date {
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: #f0f0f0;
+      padding: 0.15rem 0.5rem;
+    }
+
+    .exp-company {
+      font-size: 0.95rem;
+      color: #333333;
+      margin-bottom: 0.65rem;
+    }
+
+    .exp-summary {
+      background: #fafafa;
+      border-left: 3px solid #888888;
+      padding: 0.5rem 0.85rem;
+      font-size: 0.95rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .exp-list {
+      padding-left: 1.25rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .exp-list li {
+      margin-bottom: 0.45rem;
+      font-size: 0.96rem;
+    }
+
+    .keywords {
+      font-size: 0.82rem;
+      color: #444444;
+    }
+
+    .keywords span {
+      display: inline-block;
+      border: 1px solid #cccccc;
+      padding: 0.1rem 0.45rem;
+      margin: 0.15rem 0.25rem 0.15rem 0;
+    }
+
+    /* Accordéon pour les expériences antérieures */
+    details.archive-box {
+      margin-top: 1.25rem;
+      border: 1px solid #cccccc;
+      padding: 1rem 1.25rem;
+      background: #fcfcfc;
+    }
+
+    details.archive-box summary {
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.98rem;
+    }
+
+    details.archive-box[open] summary {
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #dddddd;
+    }
+
+    /* Formation */
+    .edu-item {
+      margin-bottom: 1.65rem;
+      padding-bottom: 1.4rem;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .edu-item:last-of-type {
+      border-bottom: none;
+    }
+
+    .edu-item h3 {
+      font-size: 1.12rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .edu-meta {
+      font-size: 0.88rem;
+      color: #444444;
+      margin-bottom: 0.6rem;
+    }
+
+    .edu-item ul {
+      padding-left: 1.25rem;
+    }
+
+    .edu-item li {
+      margin-bottom: 0.35rem;
+      font-size: 0.95rem;
+    }
+
+    /* Tableaux simples pour Compétences & Langues */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.75rem;
+      font-size: 0.94rem;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 0.65rem 0.75rem;
+      border: 1px solid #d4d4d4;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f4f4f4;
+      width: 32%;
+    }
+
+    /* Contact */
+    .contact-list {
+      list-style: none;
+      display: grid;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+
+    .contact-list li {
+      padding: 0.65rem 0.85rem;
+      border: 1px solid #cccccc;
+      background: #fafafa;
+    }
+
+    /* Responsive Mobile */
+    @media (max-width: 650px) {
+      .header-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
       }
-
-      .hero-photo-col {
-        order: -1;
-        max-width: 290px;
+      .img-wireframe.portrait {
+        max-width: 180px;
       }
-
-      .exp-row {
-        padding: 1.75rem 0;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .nav-menu {
-        display: none;
-        position: absolute;
-        top: 64px;
-        left: 0;
-        right: 0;
-        background: var(--paper);
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1.25rem 1.4rem;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .nav-menu.open {
-        display: flex;
-      }
-
-      .burger-btn {
+      th, td {
         display: block;
+        width: 100%;
       }
-
-      .contact-panel {
-        padding: 2rem 1.4rem;
+      th {
+        border-bottom: none;
       }
     }
 
-    /* ==========================================================================
-       IMPRESSION PDF PROPRE
-       ========================================================================== */
     @media print {
-      .topbar, .tabs-bar, .hero-links, .contact-actions, .toast {
+      nav, .quick-actions, .exp-controls {
         display: none !important;
       }
-      body {
-        background: #ffffff;
-      }
-      section {
-        padding: 1.5rem 0;
-      }
-      .exp-row.hidden {
-        display: grid !important;
-      }
-      .exp-row, .edu-box {
-        break-inside: avoid;
+      details.archive-box {
+        display: block;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- BARRE SUPÉRIEURE -->
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <a href="#" class="monogram">
-        Aydan Eyvazzade <span>Annecy • FR</span>
-      </a>
-
-      <button class="burger-btn" id="burgerBtn" aria-label="Menu">Menu</button>
-
-      <nav class="nav-menu" id="navMenu">
-        <a href="#approche">Mon approche</a>
-        <a href="#parcours">Expériences</a>
-        <a href="#etudes">Formation</a>
-        <a href="#outils">Outils & Langues</a>
-        <a href="#contact" class="nav-contact-link">Me contacter</a>
-      </nav>
+  <!-- NAVIGATION RAPIDE -->
+  <nav>
+    <div class="container">
+      <strong>Aydan Eyvazzade</strong>
+      <div class="nav-links">
+        <a href="#en-bref">En bref</a>
+        <a href="#experiences">Expériences</a>
+        <a href="#formation">Formation</a>
+        <a href="#competences">Compétences & Langues</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
-  </header>
+  </nav>
 
-  <!-- HERO : ACCUEIL PERSONNEL -->
-  <main>
-    <section class="hero">
-      <div class="container">
-        <div class="qr-note">
-          <span>↗ Version complète de mon CV • Suite au scan du QR code</span>
-        </div>
+  <main class="container">
 
-        <div class="hero-layout">
-          <div>
-            <h1>Aydan Eyvazzade</h1>
-            <p class="hero-roles">CJM Researcher, Chercheuse Expérience Client & Product Owner</p>
+    <!-- EN-TÊTE & ACCROCHE -->
+    <header>
+      <div class="badge-qr">Version détaillée du CV • Accès via QR Code</div>
 
-            <p class="hero-intro">
-              Bonjour et merci d'avoir scanné mon CV. Un format d'une page oblige à aller à l'essentiel : j'ai conçu cette page pour vous permettre de découvrir plus concrètement ce que je fais au quotidien — entre <strong>modélisation des parcours clients (CJM)</strong>, <strong>recherche utilisateur B2B</strong> et <strong>pilotage produit Agile</strong>.
-            </p>
-            <p class="hero-intro">
-              Actuellement en <strong>Master 1 Systèmes d'Information et Innovation Numérique (S2IN)</strong> à l'IAE Savoie Mont Blanc à Annecy, je m'attache à relier l'écoute terrain des utilisateurs aux décisions produit et data.
-            </p>
+      <div class="header-grid">
+        <div>
+          <h1>Aydan Eyvazzade</h1>
+          <p class="subtitle">CJM Researcher • Chercheuse Expérience Client (CX) • Product Owner</p>
+          <p class="intro-text">
+            Étudiante en <strong>Master 1 Systèmes d'Information et Innovation Numérique (S2IN)</strong> à l'IAE Savoie Mont Blanc (Annecy), je relie la <strong>recherche utilisateur B2B</strong>, la <strong>modélisation des parcours clients (CJM)</strong> et le <strong>pilotage produit Agile</strong> pour concevoir des services numériques centrés sur l'usage et la valeur business.
+          </p>
 
-            <div class="route-strip">
-              <span class="city">Bakou</span> (Licence Management & Banque B2B)
-              <span>→</span>
-              <span class="city">Neuchâtel</span> (Échange HES-SO & Français C1)
-              <span>→</span>
-              <span class="city">Annecy</span> (Master 1 S2IN)
-            </div>
-
-            <div class="hero-links">
-              <a href="#parcours" class="btn-editorial btn-fill">Lire mon parcours détaillé</a>
-              <button type="button" class="btn-editorial btn-outline" id="copyMailBtn">Copier mon e-mail</button>
-              <a href="https://www.linkedin.com/in/aydan-eyvazzade-22b677247" target="_blank" rel="noopener noreferrer" class="btn-editorial btn-outline">LinkedIn ↗</a>
-            </div>
-          </div>
-
-          <!-- ZONE IMAGE 1 : PORTRAIT -->
-          <div class="hero-photo-col">
-            <figure class="photo-frame">
-              <div class="photo-slot portrait">
-                <img
-                  src="img/aydan-profil.jpg"
-                  alt="Portrait d'Aydan Eyvazzade"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                />
-                <div class="photo-placeholder">
-                  <code>img/aydan-profil.jpg</code>
-                  <p>Portrait naturel et lumineux (format 4:5 recommandé)</p>
-                </div>
-              </div>
-              <figcaption class="photo-caption">
-                <span>Annecy, Haute-Savoie</span>
-                <span>01 / Portrait</span>
-              </figcaption>
-            </figure>
+          <div class="quick-actions">
+            <a href="mailto:aydaneyvaz58@gmail.com" class="btn btn-primary">Envoyer un e-mail</a>
+            <a href="https://wa.me/33745957805" target="_blank" rel="noopener noreferrer" class="btn">WhatsApp</a>
+            <a href="https://www.linkedin.com/in/aydan-eyvazzade-22b677247" target="_blank" rel="noopener noreferrer" class="btn">LinkedIn ↗</a>
+            <button type="button" class="btn" id="copyEmailBtn">Copier l'e-mail</button>
           </div>
         </div>
+
+        <!-- ZONE IMAGE 1 : PORTRAIT -->
+        <div class="img-wireframe portrait">
+          <img src="img/aydan-profil.jpg" alt="Portrait d'Aydan Eyvazzade" onerror="this.style.display='none'" />
+          <code>img/aydan-profil.jpg</code>
+          <span>Zone photo portrait (format 4:5 recommandé)</span>
+        </div>
+      </div>
+
+      <!-- RÉSUMÉ EN 30 SECONDES -->
+      <div id="en-bref" class="tldr-box">
+        <h3>L'essentiel de mon profil en 30 secondes</h3>
+        <ul>
+          <li><strong>De la donnée terrain au produit :</strong> près de 2 ans chez <em>Kapital Bank / Birbank</em> sur le portefeuille <strong>B2B (micro, PME, corporate)</strong>, de la <strong>discovery utilisateur</strong> jusqu'au suivi post-lancement.</li>
+          <li><strong>Boîte à outils Produit & CX :</strong> <strong>Customer Journey Mapping (CJM)</strong>, <strong>entretiens qualitatifs</strong>, <strong>focus groups</strong>, pilotage des KPIs (<strong>NPS, CSAT, CES</strong>), <strong>Agile / Scrum</strong>, <strong>backlog & user stories</strong>, prototypage <strong>Figma</strong>.</li>
+          <li><strong>Parcours international & trilingue :</strong> études et expériences entre l'<strong>Azerbaïdjan</strong>, la <strong>Suisse (Neuchâtel)</strong> et la <strong>France (Annecy)</strong> — <strong>Français C1</strong>, <strong>Azéri natif</strong>, <strong>Turc B2</strong>, <strong>Anglais B2/B1</strong>.</li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- SECTION 1 : EXPÉRIENCES PROFESSIONNELLES -->
+    <section id="experiences">
+      <h2>Expériences Professionnelles</h2>
+      <p class="section-desc">
+        Chaque expérience est synthétisée autour des missions clés et des méthodes utilisées. Utilisez les filtres pour cibler un domaine.
+      </p>
+
+      <div class="exp-controls">
+        <div class="filter-group">
+          <button class="filter-btn active" data-filter="all">Tout (8)</button>
+          <button class="filter-btn" data-filter="product">Produit & CX B2B (3)</button>
+          <button class="filter-btn" data-filter="research">Recherche & RH (3)</button>
+          <button class="filter-btn" data-filter="campus">Coordination étudiante (2)</button>
+        </div>
+        <button type="button" class="filter-btn" id="toggleArchiveBtn">Déplier tout le parcours</button>
+      </div>
+
+      <!-- EXPÉRIENCE 1 -->
+      <article class="exp-item" data-category="product">
+        <div class="exp-top">
+          <h3>CJM Researcher (Modélisation du Parcours Client)</h3>
+          <span class="exp-date">Janv. 2026 – En cours</span>
+        </div>
+        <div class="exp-company">
+          <strong>Kapital Bank / Birbank</strong> — Centre d'experts en expérience client • <em>Bakou, Azerbaïdjan</em> (<a href="https://birbank.az/" target="_blank" rel="noopener noreferrer">birbank.az ↗</a>)
+        </div>
+        <p class="exp-summary">
+          <strong>Objectif :</strong> Pilotage de bout en bout de la cartographie des parcours clients (<strong>CJM</strong>) pour les produits bancaires <strong>B2B</strong>, de l'idéation jusqu'au post-lancement.
+        </p>
+        <ul class="exp-list">
+          <li><strong>Cartographie CJM complète :</strong> modélisation des parcours entreprises à chaque étape du cycle de vie (<strong>discovery, conception, delivery, amélioration continue</strong>).</li>
+          <li><strong>Ownership de produits B2B :</strong> responsabilité directe de parcours et produits business dédiés au sein du portefeuille entreprises.</li>
+          <li><strong>Recherche Quali & Quanti :</strong> conduite d'études auprès de trois typologies de clients (<strong>micro-entreprises, PME et corporate</strong>).</li>
+          <li><strong>Alignement transverse :</strong> collaboration quotidienne avec les équipes <strong>produit, design et business</strong> pour ancrer la <strong>voix du client</strong> dans chaque décision.</li>
+        </ul>
+        <div class="keywords">
+          <span>Customer Journey Mapping</span>
+          <span>Banque B2B</span>
+          <span>Voice of Customer</span>
+          <span>Product Discovery</span>
+          <span>Recherche Quali/Quanti</span>
+        </div>
+      </article>
+
+      <!-- EXPÉRIENCE 2 -->
+      <article class="exp-item" data-category="product">
+        <div class="exp-top">
+          <h3>Chercheuse en Expérience Client (CX COE)</h3>
+          <span class="exp-date">Janv. 2025 – Janv. 2026</span>
+        </div>
+        <div class="exp-company">
+          <strong>Kapital Bank / Birbank</strong> — Centre d'experts en expérience client • <em>Bakou, Azerbaïdjan</em>
+        </div>
+        <p class="exp-summary">
+          <strong>Objectif :</strong> Mesurer la satisfaction post-lancement des services bancaires entreprises et transformer les retours utilisateurs en plans d'action.
+        </p>
+        <ul class="exp-list">
+          <li><strong>Pilotage des KPIs CX :</strong> mesure et suivi de l'expérience client via les indicateurs <strong>NPS, CSAT et CES</strong>.</li>
+          <li><strong>Animation terrain (Online & Présentiel) :</strong> conduite d'<strong>entretiens qualitatifs</strong> et animation de <strong>focus groups</strong> auprès de clients micro, PME et corporate.</li>
+          <li><strong>Recommandations & Reporting :</strong> croisement des données qualitatives/quantitatives et livraison de <strong>reportings structurés</strong> orientés amélioration continue.</li>
+          <li><strong>Mentorat :</strong> encadrement et montée en compétence des stagiaires en <strong>Customer Experience Research</strong>.</li>
+        </ul>
+        <div class="keywords">
+          <span>NPS / CSAT / CES</span>
+          <span>Focus Groups</span>
+          <span>Entretiens utilisateurs</span>
+          <span>Mentorat</span>
+          <span>Amélioration continue</span>
+        </div>
+      </article>
+
+      <!-- EXPÉRIENCE 3 -->
+      <article class="exp-item" data-category="product">
+        <div class="exp-top">
+          <h3>Product Owner (Stage)</h3>
+          <span class="exp-date">Juil. 2024 – Janv. 2025</span>
+        </div>
+        <div class="exp-company">
+          <strong>Kapital Bank / Birbank Business</strong> — Ventes aux PME et entreprises • <em>Bakou, Azerbaïdjan</em> (<a href="https://birbank.business/" target="_blank" rel="noopener noreferrer">birbank.business ↗</a>)
+        </div>
+        <p class="exp-summary">
+          <strong>Objectif :</strong> Participation au pilotage d'un produit bancaire digital <strong>B2B</strong> au sein d'une équipe pluridisciplinaire en méthode <strong>Agile / Scrum</strong>.
+        </p>
+        <ul class="exp-list">
+          <li><strong>Gestion de Backlog & User Stories :</strong> rédaction, structuration et priorisation des fonctionnalités selon la <strong>valeur utilisateur et business</strong>.</li>
+          <li><strong>Product Discovery & Co-création :</strong> animation de <strong>brainstormings</strong>, d'<strong>ateliers de co-création</strong> et de <strong>kick-offs produit</strong>.</li>
+          <li><strong>Cadre Agile / Scrum :</strong> participation aux rituels (<strong>sprint planning</strong>, suivi de livraison) avec les équipes <strong>produit, design, tech et stakeholders</strong>.</li>
+          <li><strong>Benchmarks concurrentiels :</strong> analyse comparative du marché bancaire B2B pour orienter la feuille de route.</li>
+        </ul>
+        <div class="keywords">
+          <span>Agile / Scrum</span>
+          <span>Product Backlog</span>
+          <span>User Stories</span>
+          <span>Ateliers Co-création</span>
+          <span>Benchmark</span>
+        </div>
+      </article>
+
+      <!-- ZONE IMAGE 2 : ATELIER CJM / PRODUIT -->
+      <div class="img-wireframe" style="margin: 1.5rem 0;">
+        <img src="img/cjm-workshop.jpg" alt="Atelier CJM ou maquette produit" onerror="this.style.display='none'" />
+        <code>img/cjm-workshop.jpg</code>
+        <span>Zone visuel méthode : atelier CJM, schéma de parcours ou wireframe Figma anonymisé (format 16:9)</span>
+      </div>
+
+      <!-- EXPÉRIENCE 4 -->
+      <article class="exp-item" data-category="research">
+        <div class="exp-top">
+          <h3>Assistante de Recherche Universitaire (Stage)</h3>
+          <span class="exp-date">Fév. 2023 – Juin 2023</span>
+        </div>
+        <div class="exp-company">
+          <strong>Haute École Spécialisée de Suisse Occidentale (HES-SO / HE-Arc)</strong> • <em>Neuchâtel, Suisse</em> (<a href="https://www.he-arc.ch/domaine/gestion/" target="_blank" rel="noopener noreferrer">he-arc.ch ↗</a>)
+        </div>
+        <ul class="exp-list">
+          <li><strong>Rédaction scientifique :</strong> co-écriture d'un <strong>article académique</strong> en collaboration avec un professeur chercheur.</li>
+          <li><strong>Enquêtes qualitatives en français :</strong> préparation, conduite et analyse d'<strong>entretiens de recherche</strong> et de revues documentaires.</li>
+        </ul>
+        <div class="keywords">
+          <span>Recherche académique</span>
+          <span>Entretiens en français</span>
+          <span>Analyse documentaire</span>
+        </div>
+      </article>
+
+      <!-- EXPÉRIENCES ANTÉRIEURES REPLIABLES POUR ALLÉGER LA LECTURE -->
+      <details class="archive-box" id="archiveDetails">
+        <summary>Afficher les expériences antérieures & engagements universitaires (2020 – 2023 • 4 postes)</summary>
+
+        <article class="exp-item" data-category="research">
+          <div class="exp-top">
+            <h3>Responsable Adjointe des Ressources Humaines (Stage)</h3>
+            <span class="exp-date">Juin 2022 – Oct. 2022</span>
+          </div>
+          <div class="exp-company"><strong>Service ASAN</strong> (Réseau de Services et d'Évaluation d'Azerbaïdjan) • <em>Bakou</em></div>
+          <ul class="exp-list">
+            <li><strong>Recrutement & Évaluation :</strong> convocation, conduite d'<strong>entretiens candidats</strong> et gestion des dossiers dans le SIRH.</li>
+            <li><strong>Analyse d'enquêtes & Projets sociaux :</strong> traitement statistique des questionnaires internes, organisation de <strong>formations</strong> et planification mensuelle de projets sociaux.</li>
+          </ul>
+        </article>
+
+        <article class="exp-item" data-category="research">
+          <div class="exp-top">
+            <h3>Coordonnatrice des Relations avec le Service Clientèle (Stage)</h3>
+            <span class="exp-date">Nov. 2021 – Janv. 2022</span>
+          </div>
+          <div class="exp-company"><strong>Service ASAN</strong> • <em>Bakou</em></div>
+          <ul class="exp-list">
+            <li><strong>Accueil & Orientation usagers :</strong> traitement des demandes quotidiennes des citoyens, rédaction de candidatures et préparation des dossiers administratifs.</li>
+          </ul>
+        </article>
+
+        <article class="exp-item" data-category="campus">
+          <div class="exp-top">
+            <h3>Coordonnatrice Facultaire</h3>
+            <span class="exp-date">Oct. 2021 – Janv. 2023</span>
+          </div>
+          <div class="exp-company"><strong>UNEC — Faculté de Commerce et de Gestion</strong> • <em>Bakou</em></div>
+          <ul class="exp-list">
+            <li><strong>Logistique académique :</strong> accompagnement des inscriptions étudiantes, organisation de <strong>conférences</strong> et résolution bénévole des incidents lors des examens.</li>
+          </ul>
+        </article>
+
+        <article class="exp-item" data-category="campus">
+          <div class="exp-top">
+            <h3>Coordinatrice de Groupe</h3>
+            <span class="exp-date">Mars 2020 – Janv. 2023</span>
+          </div>
+          <div class="exp-company"><strong>Organisation de Jeunesse Étudiante UNEC</strong> • <em>Bakou</em></div>
+          <ul class="exp-list">
+            <li><strong>Animation & Conseil étudiant :</strong> diffusion des opportunités de formations/événements et orientation des étudiants de la promotion.</li>
+          </ul>
+        </article>
+      </details>
+    </section>
+
+    <!-- SECTION 2 : ÉTUDES, FORMATION & CERTIFICATIONS -->
+    <section id="formation">
+      <h2>Études & Formation</h2>
+      <p class="section-desc">Un cursus trilingue combinant management, économie d'entreprise et systèmes d'information.</p>
+
+      <div class="edu-item">
+        <h3>Master 1 — Systèmes d'Information et Innovation Numérique (S2IN)</h3>
+        <div class="edu-meta"><strong>En cours</strong> • Université Savoie Mont Blanc — IAE Savoie Mont-Blanc (<em>Annecy, France</em>)</div>
+        <ul>
+          <li><strong>Architecture SI & Data :</strong> gouvernance des données, digitalisation des processus et bases de données (<strong>SQL</strong>).</li>
+          <li><strong>Data Science appliquée :</strong> statistiques, analyse multivariée, clustering et visualisation sous <strong>R / RStudio</strong>.</li>
+          <li><strong>Gestion de projet & Stratégie :</strong> <strong>méthodes agiles</strong>, conduite du changement et management de l'innovation digitale.</li>
+        </ul>
+      </div>
+
+      <div class="edu-item">
+        <h3>Licence en Management — Mention Bien (Note finale : 93 / 100)</h3>
+        <div class="edu-meta"><strong>2019 – 2023</strong> • Université Économique d'État d'Azerbaïdjan — UNEC (<em>Bakou</em>)</div>
+        <ul>
+          <li><strong>Mémoire de fin d'études :</strong> <em>« Principes et valeurs de management au sein des entreprises et des organisations dans deux pays : l'Azerbaïdjan et la Suisse »</em>.</li>
+          <li><strong>Compétences acquises :</strong> gestion de projet, prototypage sous <strong>Figma</strong>, analyse et synthèse d'information, prise de parole et networking.</li>
+        </ul>
+      </div>
+
+      <div class="edu-item">
+        <h3>Échange Académique (6 mois) — Économie d'Entreprise</h3>
+        <div class="edu-meta"><strong>Fév. 2023 – Juin 2023</strong> • Haute École Spécialisée de Suisse Occidentale — HES-SO (<em>Neuchâtel, Suisse</em>)</div>
+        <ul>
+          <li><strong>Enseignements suivis :</strong> <strong>marketing digital</strong>, <strong>marketing industriel</strong>, <strong>gestion publique</strong>, relations publiques (RP) et sponsoring.</li>
+        </ul>
+      </div>
+
+      <div class="edu-item">
+        <h3>Diplôme de Langue et Civilisation Françaises — Niveau C1</h3>
+        <div class="edu-meta"><strong>Fév. 2023 – Juin 2023</strong> • ILCF — Université de Neuchâtel (<em>Neuchâtel, Suisse</em>)</div>
+        <ul>
+          <li><strong>Maîtrise académique du français (C1) :</strong> compréhension/production écrite et orale avancée, argumentation, débat et présentation.</li>
+        </ul>
+      </div>
+
+      <h3 style="margin-top: 1.5rem; margin-bottom: 0.65rem; font-size: 1.1rem;">Certifications complémentaires</h3>
+      <ul class="exp-list">
+        <li><strong>Customer Insights et Consumer Analytique :</strong> analyse des comportements consommateurs et exploitation des données clients.</li>
+        <li><strong>Marketing Numérique (Profit Academy, 2023) :</strong> gestion de campagnes <strong>Google Ads</strong> et <strong>Meta Business Suite</strong>, optimisation <strong>SEO</strong> et rédaction web.</li>
+        <li><strong>Project Management : Initiating and Planning Projects (Coursera, 2021) :</strong> cadrage et planification structurée de projets.</li>
+      </ul>
+
+      <!-- ZONE IMAGE 3 : PARCOURS INTERNATIONAL -->
+      <div class="img-wireframe" style="margin-top: 1.5rem;">
+        <img src="img/parcours-international.jpg" alt="Campus Annecy ou Neuchâtel" onerror="this.style.display='none'" />
+        <code>img/parcours-international.jpg</code>
+        <span>Zone photo campus (IAE Annecy / Neuchâtel) ou événement académique (format 4:3)</span>
       </div>
     </section>
 
-    <!-- 01. MON APPROCHE -->
-    <section id="approche">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-index">01 — Fil conducteur</div>
-          <div>
-            <h2>Comment je travaille entre le terrain client et le produit</h2>
-            <p class="section-lead">
-              Ce qui m'anime, c'est de comprendre pourquoi un utilisateur bloque, hésite ou adopte un service numérique, puis de traduire ces observations en décisions concrètes pour les équipes produit.
-            </p>
-          </div>
-        </div>
+    <!-- SECTION 3 : COMPÉTENCES & LANGUES -->
+    <section id="competences">
+      <h2>Compétences & Langues</h2>
 
-        <div class="story-grid">
-          <div class="story-notes">
-            <div class="note-block">
-              <h3>Partir de la voix réelle des entreprises (B2B)</h3>
-              <p>
-                Chez Kapital Bank / Birbank, j'ai mené des entretiens qualitatifs et animé des focus groups auprès de profils très différents — indépendants, PME et grandes entreprises. Cette proximité permet de cartographier fidèlement le parcours client (<em>Customer Journey Mapping</em>) et d'identifier les points de friction avant même d'écrire une ligne de spécification.
-              </p>
-            </div>
+      <h3 style="margin-top: 1.25rem; font-size: 1.05rem;">Compétences opérationnelles</h3>
+      <table>
+        <tbody>
+          <tr>
+            <th>Produit & Recherche UX/CX</th>
+            <td><strong>Customer Journey Mapping (CJM)</strong>, <strong>Agile / Scrum</strong>, <strong>Product Discovery</strong>, gestion de backlog & <strong>User Stories</strong>, entretiens qualitatifs, animation de <strong>focus groups</strong>, indicateurs <strong>NPS / CSAT / CES</strong>.</td>
+          </tr>
+          <tr>
+            <th>Data, SI & Design</th>
+            <td><strong>SQL</strong>, <strong>R / RStudio</strong> (statistiques, clustering), <strong>Figma</strong> (prototypage), <strong>QuestionPro</strong>, <strong>MS Excel</strong>, PowerPoint, Word, Canva.</td>
+          </tr>
+          <tr>
+            <th>Marketing Digital & Gestion</th>
+            <td><strong>Gestion de projets</strong>, <strong>Google Ads</strong>, <strong>Meta Business Suite</strong>, optimisation <strong>SEO</strong>, rédaction web, présentation publique.</td>
+          </tr>
+        </tbody>
+      </table>
 
-            <div class="note-block">
-              <h3>Structurer la découverte et la livraison produit</h3>
-              <p>
-                Mon expérience en tant que Product Owner sur Birbank Business m'a appris à faire le lien entre la vision business, le design et les équipes techniques : ateliers de co-création, benchmarks concurrentiels, rédaction et priorisation des User Stories dans un cadre Scrum.
-              </p>
-            </div>
+      <h3 style="margin-top: 1.75rem; font-size: 1.05rem;">Langues parlées (Cadre CECRL)</h3>
+      <table>
+        <tbody>
+          <tr>
+            <th>Azéri</th>
+            <td><strong>Langue maternelle</strong> (expression et compréhension natives)</td>
+          </tr>
+          <tr>
+            <th>Français</th>
+            <td><strong>Niveau C1 — Avancé</strong> (compréhension et expression orale/écrite C1 • Diplôme ILCF Neuchâtel)</td>
+          </tr>
+          <tr>
+            <th>Turc</th>
+            <td><strong>Niveau B2 — Indépendant</strong> (compréhension et expression orale/écrite courantes)</td>
+          </tr>
+          <tr>
+            <th>Anglais</th>
+            <td><strong>Niveau B2 / B1</strong> (compréhension écrite et orale B2 • expression et interaction orale B1)</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-            <div class="note-block">
-              <h3>Appuyer l'intuition par la donnée et les SI</h3>
-              <p>
-                Le Master S2IN à l'IAE Savoie Mont Blanc renforce mon bagage analytique et technique (SQL, statistiques multivariées sous R/RStudio, gouvernance des données, architecture des SI) pour croiser les retours qualitatifs avec les indicateurs CX (NPS, CSAT, CES).
-              </p>
-            </div>
-          </div>
+    <!-- SECTION 4 : CONTACT DIRECT -->
+    <section id="contact" style="border-bottom: none;">
+      <h2>Contact</h2>
+      <p class="section-desc">Disponible sur Annecy et mobile pour échanger autour d'opportunités en Product Management ou Recherche UX/CX.</p>
 
-          <!-- ZONE IMAGE 2 : ATELIER CJM / PRODUIT -->
-          <div>
-            <figure class="photo-frame">
-              <div class="photo-slot wide">
-                <img
-                  src="img/cjm-workshop.jpg"
-                  alt="Atelier de cartographie de parcours client et conception produit"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                />
-                <div class="photo-placeholder">
-                  <code>img/cjm-workshop.jpg</code>
-                  <p>Photo d'atelier CJM, tableau blanc ou prototype Figma anonymisé (16:10)</p>
-                </div>
-              </div>
-              <figcaption class="photo-caption">
-                <span>Discovery, CJM & UX Research</span>
-                <span>02 / Méthode</span>
-              </figcaption>
-            </figure>
-          </div>
-        </div>
+      <ul class="contact-list">
+        <li><strong>E-mail :</strong> <a href="mailto:aydaneyvaz58@gmail.com">aydaneyvaz58@gmail.com</a></li>
+        <li><strong>Téléphone / WhatsApp :</strong> <a href="tel:+33745957805">(+33) 07 45 95 78 05</a> (<a href="https://wa.me/33745957805" target="_blank" rel="noopener noreferrer">Ouvrir WhatsApp ↗</a>)</li>
+        <li><strong>LinkedIn :</strong> <a href="https://www.linkedin.com/in/aydan-eyvazzade-22b677247" target="_blank" rel="noopener noreferrer">linkedin.com/in/aydan-eyvazzade-22b677247 ↗</a></li>
+        <li><strong>Adresse :</strong> 3, rue Martyrs de la Déportation, 74940 Annecy, France</li>
+      </ul>
+
+      <div class="quick-actions" style="margin-top: 1.25rem;">
+        <button type="button" class="btn" onclick="window.print()">Imprimer / Enregistrer en PDF</button>
       </div>
     </section>
 
-    <!-- 02. EXPÉRIENCES PROFESSIONNELLES -->
-    <section id="parcours">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-index">02 — Expériences</div>
-          <div>
-            <h2>Parcours professionnel & responsabilités</h2>
-            <p class="section-lead">
-              L'intégralité de mes expériences en banque digitale B2B, recherche académique en Suisse, ressources humaines et coordination universitaire.
-            </p>
-          </div>
-        </div>
-
-        <div class="tabs-bar" role="tablist">
-          <button class="tab-btn active" data-filter="all">Tout afficher (8)</button>
-          <button class="tab-btn" data-filter="product">Produit & Expérience Client (3)</button>
-          <button class="tab-btn" data-filter="research">Recherche & Secteur Public (3)</button>
-          <button class="tab-btn" data-filter="campus">Vie Universitaire (2)</button>
-        </div>
-
-        <div class="exp-list">
-          <!-- 1. CJM Researcher -->
-          <article class="exp-row" data-cat="product">
-            <div class="exp-aside">
-              <span class="exp-period now">12/01/2026 – En cours</span>
-              <span class="exp-place">Bakou, Azerbaïdjan</span>
-              <span class="exp-sector">Banque & Finance B2B</span>
-            </div>
-            <div class="exp-body">
-              <h3>CJM Researcher (Modélisation du Parcours Client)</h3>
-              <div class="exp-org">
-                Kapital Bank / Birbank — Centre d'experts en expérience client
-                <a href="https://birbank.az/" target="_blank" rel="noopener noreferrer">birbank.az ↗</a>
-              </div>
-              <ul class="exp-tasks">
-                <li>Pilotage de la cartographie du parcours client pour des produits bancaires business (B2B), couvrant l'ensemble du cycle de vie produit, de l'idéation au post-lancement.</li>
-                <li>Collecte et intégration de la voix des clients entreprises à chaque étape du développement produit (discovery, conception, delivery, amélioration continue).</li>
-                <li>Ownership de parcours et produits business dédiés au sein du portefeuille B2B.</li>
-                <li>Conduite de recherches qualitatives et quantitatives auprès de clients micro, PME et corporate.</li>
-                <li>Collaboration étroite avec les équipes produit, design et business afin de garantir des décisions centrées utilisateur et alignées sur les enjeux business.</li>
-              </ul>
-              <div class="exp-keywords">
-                <span class="kw">Customer Journey Mapping</span>
-                <span class="kw">Portefeuille B2B</span>
-                <span class="kw">Voice of Customer</span>
-                <span class="kw">Product Discovery</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- 2. Chercheuse CX -->
-          <article class="exp-row" data-cat="product">
-            <div class="exp-aside">
-              <span class="exp-period">22/01/2025 – 09/01/2026</span>
-              <span class="exp-place">Bakou, Azerbaïdjan</span>
-              <span class="exp-sector">CX COE • Banque</span>
-            </div>
-            <div class="exp-body">
-              <h3>Chercheuse en Expérience Client</h3>
-              <div class="exp-org">
-                Kapital Bank / Birbank — Centre d'experts en expérience client
-                <a href="https://birbank.az/" target="_blank" rel="noopener noreferrer">birbank.az ↗</a>
-              </div>
-              <ul class="exp-tasks">
-                <li>Conduite de recherches post-lancement sur les produits bancaires à destination des entreprises.</li>
-                <li>Évaluation et mesure de l'expérience client à l'aide des principaux indicateurs CX (CSAT, CES, NPS).</li>
-                <li>Réalisation d'entretiens qualitatifs et animation de focus groups auprès de clients micro, PME et corporate, en formats online et présentiel.</li>
-                <li>Analyse des parcours clients et interprétation des données qualitatives et quantitatives.</li>
-                <li>Élaboration de reportings structurés et formulation de recommandations orientées amélioration continue.</li>
-                <li>Encadrement et mentorat de stagiaires en Customer Experience Research.</li>
-              </ul>
-              <div class="exp-keywords">
-                <span class="kw">CSAT / CES / NPS</span>
-                <span class="kw">Focus Groups</span>
-                <span class="kw">Entretiens Qualitatifs</span>
-                <span class="kw">Mentorat</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- 3. Product Owner -->
-          <article class="exp-row" data-cat="product">
-            <div class="exp-aside">
-              <span class="exp-period">26/07/2024 – 25/01/2025</span>
-              <span class="exp-place">Bakou, Azerbaïdjan</span>
-              <span class="exp-sector">Ventes PME & Entreprises</span>
-            </div>
-            <div class="exp-body">
-              <h3>Product Owner (Stage)</h3>
-              <div class="exp-org">
-                Kapital Bank / Birbank Business
-                <a href="https://birbank.business/" target="_blank" rel="noopener noreferrer">birbank.business ↗</a>
-              </div>
-              <ul class="exp-tasks">
-                <li>Appropriation des méthodologies Agile, notamment du cadre Scrum (rôles, responsabilités, sprint planning, etc.).</li>
-                <li>Compréhension du cycle de vie d'un produit digital, de la phase de discovery jusqu'à la mise en production.</li>
-                <li>Acquisition des bases de la gestion de backlog produit : rédaction, structuration et priorisation des User Stories.</li>
-                <li>Développement d'une vision produit orientée utilisateur et valeur business.</li>
-                <li>Initiation aux pratiques de product discovery (brainstorming, ateliers de co-création, kick-off produit).</li>
-                <li>Apprentissage du travail en environnement collaboratif et transverse (équipes produit, design, tech, stakeholders).</li>
-                <li>Analyse comparative du marché à travers la réalisation de benchmarks (concurrence, étude de marché).</li>
-                <li>Sensibilisation aux enjeux des produits bancaires B2B et à l'expérience client dans le secteur financier.</li>
-              </ul>
-              <div class="exp-keywords">
-                <span class="kw">Scrum & Agile</span>
-                <span class="kw">Product Backlog</span>
-                <span class="kw">User Stories</span>
-                <span class="kw">Ateliers Co-création</span>
-                <span class="kw">Benchmark</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- 4. HES-SO Recherche -->
-          <article class="exp-row" data-cat="research">
-            <div class="exp-aside">
-              <span class="exp-period">11/02/2023 – 17/06/2023</span>
-              <span class="exp-place">Neuchâtel, Suisse</span>
-              <span class="exp-sector">Recherche Académique</span>
-            </div>
-            <div class="exp-body">
-              <h3>Stagiaire — Assistante de recherche universitaire</h3>
-              <div class="exp-org">
-                Haute École Spécialisée de Suisse Occidentale (HES-SO / HE-Arc)
-                <a href="https://www.he-arc.ch/domaine/gestion/" target="_blank" rel="noopener noreferrer">he-arc.ch ↗</a>
-              </div>
-              <ul class="exp-tasks">
-                <li>Rédaction d'un article scientifique en collaboration avec le professeur.</li>
-                <li>Conduite de recherches documentaires et analytiques.</li>
-                <li>Réalisation et analyse d'entretiens qualitatifs en français.</li>
-                <li>Assistance académique et organisationnelle auprès du professeur.</li>
-              </ul>
-              <div class="exp-keywords">
-                <span class="kw">Rédaction Scientifique</span>
-                <span class="kw">Entretiens en Français</span>
-                <span class="kw">Analyse Documentaire</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- 5. ASAN RH -->
-          <article class="exp-row" data-cat="research">
-            <div class="exp-aside">
-              <span class="exp-period">20/06/2022 – 20/10/2022</span>
-              <span class="exp-place">Bakou, Azerbaïdjan</span>
-              <span class="exp-sector">Service Public • RH</span>
-            </div>
-            <div class="exp-body">
-              <h3>Responsable Adjointe des Ressources Humaines (Stage)</h3>
-              <div class="exp-org">Service ASAN — Réseau de Services et d'Évaluation d'Azerbaïdjan</div>
-              <ul class="exp-tasks">
-                <li>Analyse et préparation du rapport des questionnaires collectés (programme de stages Master-2 RH).</li>
-                <li>Organisation de formations et d'événements liés aux activités bénévoles.</li>
-                <li>Convoquer un entretien, mener un entretien et évaluer les candidats.</li>
-                <li>Saisir et archiver les documents et données des candidats dans le système.</li>
-                <li>Travailler avec l'équipe sur la planification mensuelle de projets sociaux assignés par la direction.</li>
-              </ul>
-              <div class="exp-keywords">
-                <span class="kw">Recrutement</span>
-                <span class="kw">Analyse d'Enquêtes</span>
-                <span class="kw">Projets Sociaux</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- 6. ASAN Service clientèle -->
-          <article class="exp-row" data-cat="research">
-            <div class="exp-aside">
-              <span class="exp-period">15/11/2021 – 15/01/2022</span>
-              <span class="exp-place">Bakou, Azerbaïdjan</span>
-              <span class="exp-sector">Relation Usagers</span>
-            </div>
-            <div class="exp-body">
-              <h3>Coordonnatrice du gestionnaire des relations avec le service à la clientèle</h3>
-              <div class="exp-org">Service ASAN — Réseau de Services et d'Évaluation d'Azerbaïdjan</div>
-              <ul class="exp-tasks">
-                <li>Prise en charge des demandes quotidiennes des usagers (programme de stages Master-1).</li>
-                <li>Rédaction de candidatures et préparation des documents administratifs.</li>
-                <li>Fourniture de services de proximité aux citoyens.</li>
-              </ul>
-              <div class="exp-keywords">
-                <span class="kw">Accueil & Conseil</span>
-                <span class="kw">Gestion Documentaire</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- 7. Coordonnatrice Facultaire UNEC -->
-          <article class="exp-row" data-cat="campus">
-            <div class="exp-aside">
-              <span class="exp-period">05/10/2021 – 30/01/2023</span>
-              <span class="exp-place">Bakou, Azerbaïdjan</span>
-              <span class="exp-sector">Faculté de Gestion</span>
-            </div>
-            <div class="exp-body">
-              <h3>Coordonnatrice Facultaire</h3>
-              <div class="exp-org">UNEC — Faculté de Commerce et de Gestion</div>
-              <ul class="exp-tasks">
-                <li>Inscription des étudiants à la faculté de l'université.</li>
-                <li>Participation active à des événements et conférences.</li>
-                <li>Activité bénévole dans la résolution des problèmes posés lors des examens.</li>
-              </ul>
-              <div class="exp-keywords">
-                <span class="kw">Coordination</span>
-                <span class="kw">Événements Académiques</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- 8. Coordinatrice de Groupe UNEC -->
-          <article class="exp-row" data-cat="campus">
-            <div class="exp-aside">
-              <span class="exp-period">15/03/2020 – 30/01/2023</span>
-              <span class="exp-place">Bakou, Azerbaïdjan</span>
-              <span class="exp-sector">Engagement Étudiant</span>
-            </div>
-            <div class="exp-body">
-              <h3>Coordinatrice de Groupe</h3>
-              <div class="exp-org">Organisation de Jeunesse Étudiante UNEC</div>
-              <ul class="exp-tasks">
-                <li>Partager des formations, des événements et des annonces entre les étudiants du groupe.</li>
-                <li>Guider et orienter les étudiants sur les formations et les événements.</li>
-              </ul>
-              <div class="exp-keywords">
-                <span class="kw">Animation Étudiante</span>
-                <span class="kw">Communication</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- 03. ÉTUDES & FORMATION -->
-    <section id="etudes">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-index">03 — Formation</div>
-          <div>
-            <h2>Un parcours académique entre trois pays</h2>
-            <p class="section-lead">
-              Une formation initiale en management et économie d'entreprise enrichie par une spécialisation en systèmes d'information et transformation numérique.
-            </p>
-          </div>
-        </div>
-
-        <div class="edu-entries">
-          <!-- Master 1 S2IN -->
-          <div class="edu-box highlight">
-            <div>
-              <span class="edu-meta">En cours • Annecy, France</span>
-              <h3>Master 1 — Systèmes d'Information et Innovation Numérique (S2IN)</h3>
-              <div class="edu-inst">Université Savoie Mont Blanc — IAE Savoie Mont-Blanc</div>
-              <ul class="edu-points">
-                <li><strong>Systèmes d'information & transformation numérique :</strong> architecture des SI, gouvernance des données et digitalisation.</li>
-                <li><strong>Gestion de projet & innovation numérique :</strong> méthodes agiles, gestion des processus et conduite du changement.</li>
-                <li><strong>Analyse de données & statistiques appliquées :</strong> statistiques, analyse multivariée, clustering et visualisation.</li>
-                <li><strong>Outils & technologies numériques :</strong> SQL, R / RStudio et bases de données.</li>
-                <li><strong>Management & stratégie :</strong> management de l'innovation, stratégie digitale et gestion des organisations.</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Licence Management UNEC -->
-          <div class="edu-box">
-            <div>
-              <span class="edu-meta">15/09/2019 – 23/07/2023 • Bakou, Azerbaïdjan</span>
-              <h3>Management (Licence)</h3>
-              <div class="edu-inst">Université Économique d'État d'Azerbaïdjan (UNEC)</div>
-              <ul class="edu-points">
-                <li><strong>Hard skills :</strong> Gestion de projet, prototypage Figma, analyse et synthèse de l'information, MS Office, Canva.</li>
-                <li><strong>Soft skills :</strong> Présentation orale et écrite, travail en équipe, communication, networking et événements académiques.</li>
-              </ul>
-            </div>
-            <div class="thesis-note">
-              <strong>Note finale : 93 / 100</strong><br />
-              Mémoire : « Principes et valeurs de management au sein des entreprises et des organisations dans deux pays : l'Azerbaïdjan et la Suisse ».
-            </div>
-          </div>
-
-          <!-- Échange HES-SO -->
-          <div class="edu-box">
-            <div>
-              <span class="edu-meta">20/02/2023 – 17/06/2023 • Neuchâtel, Suisse</span>
-              <h3>Économie d'Entreprise (Échange académique de 6 mois)</h3>
-              <div class="edu-inst">Haute École Spécialisée de Suisse Occidentale (HES-SO)</div>
-              <ul class="edu-points">
-                <li>Gestion publique</li>
-                <li>Marketing digital et marketing industriel</li>
-                <li>Relations publiques (RP) et sponsoring</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- ILCF Neuchâtel -->
-          <div class="edu-box">
-            <div>
-              <span class="edu-meta">20/02/2023 – 17/06/2023 • Neuchâtel, Suisse</span>
-              <h3>Institut de Langue et de Civilisation Françaises (Niveau C1)</h3>
-              <div class="edu-inst">Université de Neuchâtel</div>
-              <ul class="edu-points">
-                <li>Diplôme final C1 (2 crédits) : compréhension orale et écrite approfondie.</li>
-                <li>Production orale et écrite, débat argumenté et présentation en français.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Certifications + Photo 3 -->
-        <div class="cert-split">
-          <div>
-            <h3>Formations complémentaires & certifications</h3>
-            <div class="cert-rows">
-              <div class="cert-row">
-                <strong>Customer Insights et Consumer Analytique pour les organisations : Concepts</strong>
-                <span>Compréhension des comportements consommateurs et exploitation analytique des insights clients.</span>
-              </div>
-              <div class="cert-row">
-                <strong>Marketing Numérique — Profit Academy (Bakou)</strong>
-                <span>15/08/2023 – 15/12/2023 • Gestion de contenus sur Meta Business Suite, campagnes Meta & Google Ads, SEO et rédaction web.</span>
-              </div>
-              <div class="cert-row">
-                <strong>Project Management Training : Initiating and Planning Projects — Coursera</strong>
-                <span>Juin 2021 • Initialisation, cadrage et planification de projets.</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- ZONE IMAGE 3 : PARCOURS INTERNATIONAL -->
-          <div>
-            <figure class="photo-frame">
-              <div class="photo-slot campus">
-                <img
-                  src="img/parcours-international.jpg"
-                  alt="Parcours académique international"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                />
-                <div class="photo-placeholder">
-                  <code>img/parcours-international.jpg</code>
-                  <p>Photo sur campus (Annecy / Neuchâtel) ou lors d'une conférence (4:3)</p>
-                </div>
-              </div>
-              <figcaption class="photo-caption">
-                <span>Neuchâtel • Annecy • Bakou</span>
-                <span>03 / Campus</span>
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 04. OUTILS & LANGUES -->
-    <section id="outils">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-index">04 — Savoir-faire</div>
-          <div>
-            <h2>Outils, méthodes & langues parlées</h2>
-          </div>
-        </div>
-
-        <div class="tools-layout">
-          <div class="skills-categories">
-            <div class="skill-cat">
-              <h3>Produit, Recherche UX/CX & Gestion</h3>
-              <div class="skill-inline-list">
-                <span class="skill-chip">Customer Journey Mapping (CJM)</span>
-                <span class="skill-chip">Agile / Scrum</span>
-                <span class="skill-chip">Product Discovery</span>
-                <span class="skill-chip">User Stories & Backlog</span>
-                <span class="skill-chip">Entretiens qualitatifs</span>
-                <span class="skill-chip">Animation de Focus Groups</span>
-                <span class="skill-chip">NPS / CSAT / CES</span>
-                <span class="skill-chip">Gestion de projets</span>
-                <span class="skill-chip">Communication & présentation publique</span>
-              </div>
-            </div>
-
-            <div class="skill-cat">
-              <h3>Data, Design & Bureautique</h3>
-              <div class="skill-inline-list">
-                <span class="skill-chip">SQL</span>
-                <span class="skill-chip">R / RStudio</span>
-                <span class="skill-chip">Figma</span>
-                <span class="skill-chip">QuestionPro</span>
-                <span class="skill-chip">MS Excel</span>
-                <span class="skill-chip">MS PowerPoint</span>
-                <span class="skill-chip">MS Word</span>
-                <span class="skill-chip">Canva</span>
-              </div>
-            </div>
-
-            <div class="skill-cat">
-              <h3>Acquisition & Digital</h3>
-              <div class="skill-inline-list">
-                <span class="skill-chip">Google Ads</span>
-                <span class="skill-chip">Meta Business Suite</span>
-                <span class="skill-chip">Optimisation SEO</span>
-                <span class="skill-chip">Rédaction web</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="lang-table">
-            <h3>Langues (Cadre CECRL)</h3>
-
-            <div class="lang-row">
-              <div class="lang-top">
-                <strong>Azéri</strong>
-                <span class="lang-badge">Langue maternelle</span>
-              </div>
-              <div class="lang-sub">Expression et compréhension natives.</div>
-            </div>
-
-            <div class="lang-row">
-              <div class="lang-top">
-                <strong>Français</strong>
-                <span class="lang-badge">Niveau C1</span>
-              </div>
-              <div class="lang-sub">Compréhension et expression orale/écrite C1 • Diplôme ILCF Neuchâtel.</div>
-            </div>
-
-            <div class="lang-row">
-              <div class="lang-top">
-                <strong>Turc</strong>
-                <span class="lang-badge">Niveau B2</span>
-              </div>
-              <div class="lang-sub">Compréhension et expression orale et écrite courantes.</div>
-            </div>
-
-            <div class="lang-row">
-              <div class="lang-top">
-                <strong>Anglais</strong>
-                <span class="lang-badge">B2 / B1</span>
-              </div>
-              <div class="lang-sub">Compréhension écrite et orale B2 • Expression et interaction orale B1.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 05. CONTACT -->
-    <section id="contact" class="contact-section">
-      <div class="container">
-        <div class="contact-panel">
-          <div>
-            <h2>Discutons ensemble</h2>
-            <p>
-              Basée à Annecy (74940), je suis disponible par e-mail, téléphone ou WhatsApp pour échanger autour de mon parcours ou d'opportunités en Product Management et Recherche UX/CX.
-            </p>
-            <div class="contact-actions">
-              <a href="mailto:aydaneyvaz58@gmail.com" class="btn-editorial btn-light">Écrire un e-mail</a>
-              <a href="https://wa.me/33745957805" target="_blank" rel="noopener noreferrer" class="btn-editorial btn-dark-outline">WhatsApp ↗</a>
-              <button type="button" class="btn-editorial btn-dark-outline" onclick="window.print()">Imprimer / PDF</button>
-            </div>
-          </div>
-
-          <div class="contact-coords">
-            <a href="mailto:aydaneyvaz58@gmail.com" class="coord-link">
-              <span class="coord-label">Adresse électronique</span>
-              <span>aydaneyvaz58@gmail.com</span>
-            </a>
-            <a href="tel:+33745957805" class="coord-link">
-              <span class="coord-label">Téléphone & WhatsApp</span>
-              <span>(+33) 07 45 95 78 05</span>
-            </a>
-            <a href="https://www.linkedin.com/in/aydan-eyvazzade-22b677247" target="_blank" rel="noopener noreferrer" class="coord-link">
-              <span class="coord-label">Profil LinkedIn</span>
-              <span>linkedin.com/in/aydan-eyvazzade-22b677247 ↗</span>
-            </a>
-            <div class="coord-link">
-              <span class="coord-label">Localisation</span>
-              <span>3, rue Martyrs de la Déportation, 74940 Annecy</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <footer class="container">
-    <span>Aydan Eyvazzade — Parcours détaillé</span>
-    <span>Annecy, France • <span id="yearNow"></span></span>
-  </footer>
-
-  <div class="toast" id="copyToast">Adresse e-mail copiée : aydaneyvaz58@gmail.com</div>
-
   <script>
-    document.getElementById('yearNow').textContent = new Date().getFullYear();
+    // 1. Filtrage par domaine d'expérience
+    const filterBtns = document.querySelectorAll('.filter-btn[data-filter]');
+    const expItems = document.querySelectorAll('.exp-item');
+    const archiveDetails = document.getElementById('archiveDetails');
 
-    // Navigation mobile
-    const burgerBtn = document.getElementById('burgerBtn');
-    const navMenu = document.getElementById('navMenu');
-
-    burgerBtn.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
-    });
-
-    navMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => navMenu.classList.remove('open'));
-    });
-
-    // Filtres des expériences
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const expRows = document.querySelectorAll('.exp-row');
-
-    tabBtns.forEach(btn => {
+    filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        tabBtns.forEach(b => b.classList.remove('active'));
+        filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
         const selected = btn.getAttribute('data-filter');
-        expRows.forEach(row => {
-          if (selected === 'all' || row.getAttribute('data-cat') === selected) {
-            row.classList.remove('hidden');
+
+        // Ouvrir automatiquement les archives si un filtre est activé
+        if (selected !== 'all') {
+          archiveDetails.setAttribute('open', 'true');
+        }
+
+        expItems.forEach(item => {
+          if (selected === 'all' || item.getAttribute('data-category') === selected) {
+            item.classList.remove('hidden');
           } else {
-            row.classList.add('hidden');
+            item.classList.add('hidden');
           }
         });
       });
     });
 
-    // Copie e-mail
-    const copyMailBtn = document.getElementById('copyMailBtn');
-    const copyToast = document.getElementById('copyToast');
+    // 2. Bouton tout déplier / tout replier
+    const toggleArchiveBtn = document.getElementById('toggleArchiveBtn');
+    toggleArchiveBtn.addEventListener('click', () => {
+      const isOpen = archiveDetails.hasAttribute('open');
+      if (isOpen) {
+        archiveDetails.removeAttribute('open');
+        toggleArchiveBtn.textContent = 'Déplier tout le parcours';
+      } else {
+        archiveDetails.setAttribute('open', 'true');
+        toggleArchiveBtn.textContent = 'Replier les archives';
+      }
+    });
 
-    copyMailBtn.addEventListener('click', () => {
+    // 3. Copie rapide de l'adresse e-mail
+    const copyEmailBtn = document.getElementById('copyEmailBtn');
+    copyEmailBtn.addEventListener('click', () => {
       navigator.clipboard.writeText('aydaneyvaz58@gmail.com').then(() => {
-        copyToast.classList.add('visible');
-        setTimeout(() => copyToast.classList.remove('visible'), 2600);
+        const originalText = copyEmailBtn.textContent;
+        copyEmailBtn.textContent = 'E-mail copié ✓';
+        setTimeout(() => {
+          copyEmailBtn.textContent = originalText;
+        }, 2000);
       });
     });
   </script>
