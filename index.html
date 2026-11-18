@@ -8,7 +8,7 @@
   
   <!-- Métadonnées Open Graph pour le partage de lien (LinkedIn, WhatsApp) -->
   <meta property="og:title" content="Aydan Eyvazzade — Product Owner & CX Researcher" />
-  <meta property="og:description" content="Découvrez l'intégralité de mon parcours en gestion de produit digital, recherche CX et modélisation du parcours client (CJM)." />
+  <meta property="og:description" content="Découvrez l'intégralité de mon parcours en gestion de produit digital, recherche CX (Business & Retail Banking) et modélisation du parcours client (CJM)." />
   <meta property="og:image" content="img/og-preview.jpg" />
   <meta property="og:type" content="website" />
 
@@ -79,6 +79,7 @@
     .contact-card > *,
     .edu-branch-grid > *,
     .edu-modules-grid > *,
+    .projects-domain-grid > *,
     .skills-grid > *,
     .languages-grid > * {
       min-width: 0;
@@ -117,6 +118,8 @@
     .hero-bio strong,
     .pillar-card p strong,
     .exp-bullets li strong,
+    .projects-method-banner strong,
+    .project-list li strong,
     .edu-module strong,
     .edu-chip strong,
     .cert-item span strong {
@@ -751,6 +754,171 @@
       background: var(--bg-subtle-soft);
       color: var(--text-primary);
       border: 1px solid var(--border-color);
+    }
+
+    /* ==========================================================================
+       BLOC PROJETS & PÉRIMÈTRES CLÉS (BIRBANK BIZNES & RETAIL BANKING)
+       ========================================================================== */
+    .projects-showcase {
+      margin-top: 2.75rem;
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-color);
+      border-top: 4px solid var(--accent-primary);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .projects-showcase-header {
+      margin-bottom: 1.35rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--bg-subtle);
+    }
+
+    .projects-showcase-header h3 {
+      font-size: 1.22rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .projects-showcase-header h3 i {
+      color: var(--accent-primary);
+    }
+
+    .projects-showcase-header p {
+      font-size: 0.94rem;
+      color: var(--text-secondary);
+    }
+
+    .projects-method-banner {
+      background: var(--bg-subtle-soft);
+      border: 1px solid var(--border-color);
+      border-left: 3.5px solid var(--accent-primary);
+      border-radius: var(--radius-sm);
+      padding: 0.9rem 1.1rem;
+      margin-bottom: 1.65rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      line-height: 1.55;
+    }
+
+    .projects-method-banner i {
+      color: var(--accent-primary);
+      margin-top: 0.25rem;
+      flex-shrink: 0;
+    }
+
+    .projects-domain-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.85fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .project-domain-card {
+      background: var(--bg-main);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.45rem;
+    }
+
+    .project-domain-title {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      padding-bottom: 0.85rem;
+      margin-bottom: 1.05rem;
+      border-bottom: 1.5px solid var(--accent-primary);
+    }
+
+    .project-domain-title h4 {
+      font-size: 1.04rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .project-domain-title h4 i {
+      color: var(--accent-primary);
+    }
+
+    .domain-badge {
+      font-size: 0.73rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: var(--accent-primary);
+      color: #ffffff;
+      padding: 0.22rem 0.6rem;
+      border-radius: var(--radius-sm);
+    }
+
+    .domain-badge.secondary {
+      background: var(--accent-teal);
+    }
+
+    .project-subgroups {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .project-subgroup-label {
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--text-muted);
+      margin-bottom: 0.45rem;
+      display: block;
+    }
+
+    .project-list {
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .project-list li {
+      position: relative;
+      padding-left: 1.15rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.48;
+    }
+
+    .project-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.56rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-primary);
+    }
+
+    .status-pill {
+      display: inline-block;
+      font-size: 0.71rem;
+      font-weight: 700;
+      background: var(--accent-primary);
+      color: #ffffff;
+      padding: 0.12rem 0.48rem;
+      border-radius: var(--radius-sm);
+      margin-left: 0.3rem;
+      vertical-align: middle;
     }
 
     /* ==========================================================================
@@ -1399,6 +1567,7 @@
 
       .hero-grid,
       .approach-grid,
+      .projects-domain-grid,
       .cert-wrapper,
       .contact-card {
         grid-template-columns: 1fr;
@@ -1602,6 +1771,20 @@
         padding-left: 1rem;
       }
 
+      /* Projets Birbank mobile */
+      .projects-showcase {
+        padding: 1.25rem 1.05rem;
+        margin-top: 2rem;
+      }
+
+      .projects-showcase-header h3 {
+        font-size: 1.05rem;
+      }
+
+      .project-domain-card {
+        padding: 1.1rem 1rem;
+      }
+
       /* Sous-branche mobilité Suisse sans écrasement horizontal */
       .edu-branch {
         margin-top: 0.85rem;
@@ -1689,11 +1872,11 @@
         <h1>Aydan Eyvazzade</h1>
         <p class="hero-subtitle">CJM Researcher • Chercheuse Expérience Client (CX) • Product Owner</p>
         <p class="hero-bio">
-          Actuellement en <strong>Master 1 Systèmes d'Information et Innovation Numérique (S2IN)</strong> à l'IAE Savoie Mont Blanc (Annecy), j'allie <strong>gestion de produit digital (Agile/Scrum)</strong>, <strong>recherche client B2B</strong> et <strong>modélisation des parcours clients (CJM)</strong> pour concevoir des solutions alignées sur les besoins métiers et clients.
+          Actuellement en <strong>Master 1 Systèmes d'Information et Innovation Numérique (S2IN)</strong> à l'IAE Savoie Mont Blanc (Annecy), j'allie <strong>gestion de produit digital (Agile/Scrum)</strong>, <strong>recherche client (Business & Retail Banking)</strong> et <strong>modélisation des parcours clients (CJM)</strong> pour concevoir des solutions alignées sur les enjeux métiers et les attentes des clients.
         </p>
 
         <div class="hero-actions">
-          <a href="#experiences" class="btn btn-primary"><i class="fa-solid fa-briefcase"></i> Explorer mes expériences détaillées</a>
+          <a href="#experiences" class="btn btn-primary"><i class="fa-solid fa-briefcase"></i> Explorer mes expériences & projets</a>
           <button type="button" class="btn btn-secondary" id="copyEmailBtn"><i class="fa-regular fa-copy"></i> Copier mon e-mail</button>
           <a href="https://www.linkedin.com/in/aydan-eyvazzade-22b677247" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fa-brands fa-linkedin"></i> LinkedIn ↗</a>
         </div>
@@ -1701,7 +1884,7 @@
         <div class="hero-stats">
           <div class="stat-item">
             <strong><i class="fa-solid fa-chart-line"></i> ~2 ans</strong>
-            <span>En Product & CX bancaire B2B</span>
+            <span>Product & CX (Business & Retail)</span>
           </div>
           <div class="stat-item">
             <strong><i class="fa-solid fa-earth-europe"></i> 3 pays</strong>
@@ -1738,14 +1921,14 @@
       <div class="section-header">
         <span class="section-tag"><i class="fa-solid fa-compass"></i> Positionnement</span>
         <h2>À la croisée du Produit, de l'Expérience Client et de la Data</h2>
-        <p>Mon parcours combine l'écoute terrain des clients, le pilotage Agile de produits numériques et l'analyse structurée des données.</p>
+        <p>Mon parcours combine l'écoute terrain des clients particuliers et professionnels, le pilotage Agile de produits numériques et l'analyse structurée des données.</p>
       </div>
 
       <div class="approach-grid">
         <div class="pillars-list">
           <div class="pillar-card">
             <h3><i class="fa-solid fa-route"></i> 1. Customer Journey Mapping & Recherche CX</h3>
-            <p>Conduite d'<strong>entretiens qualitatifs</strong>, <strong>animation de focus groups</strong> (micro, PME, corporate) et suivi des <strong>indicateurs clés (NPS, CSAT, CES)</strong> pour <strong>cartographier et optimiser</strong> chaque point de contact client.</p>
+            <p>Définition des <strong>objectifs de recherche</strong>, conception de <strong>questionnaires et enquêtes</strong>, conduite d'<strong>entretiens qualitatifs</strong> et <strong>focus groups</strong> (particuliers, micro, PME, corporate) et suivi des <strong>KPIs (NPS, CSAT, CES)</strong> pour lever les points de friction.</p>
           </div>
           <div class="pillar-card">
             <h3><i class="fa-solid fa-list-check"></i> 2. Product Ownership & Méthodes Agiles</h3>
@@ -1782,7 +1965,7 @@
       <div class="section-header">
         <span class="section-tag"><i class="fa-solid fa-briefcase"></i> Parcours Détaillé</span>
         <h2>Expériences Professionnelles & Engagements</h2>
-        <p>Retrouvez ci-dessous le détail complet de mes missions en banque digitale B2B, recherche académique, ressources humaines et coordination étudiante.</p>
+        <p>Retrouvez ci-dessous le détail complet de mes missions en banque digitale (Business & Retail), recherche académique, ressources humaines et coordination étudiante.</p>
       </div>
 
       <!-- Filtres interactifs -->
@@ -1812,15 +1995,15 @@
             </div>
           </div>
           <ul class="exp-bullets">
-            <li>Pilotage de la <strong>cartographie du parcours client</strong> (<em>Customer Journey Mapping</em>) pour des <strong>produits bancaires business (B2B)</strong>, couvrant l'ensemble du <strong>cycle de vie produit</strong>, de l'idéation au post-lancement.</li>
-            <li>Collecte et intégration de la <strong>voix des clients entreprises</strong> à chaque étape du développement produit (discovery, conception, delivery, amélioration continue).</li>
-            <li><strong>Ownership de parcours et produits business</strong> dédiés au sein du portefeuille B2B.</li>
-            <li>Conduite de <strong>recherches qualitatives et quantitatives</strong> auprès de clients <strong>micro, PME et corporate</strong>.</li>
+            <li>Pilotage de la <strong>cartographie du parcours client</strong> (<em>Customer Journey Mapping</em>) sur les segments <strong>Business Banking (Birbank Biznes)</strong> et <strong>Retail Banking (Birbank)</strong>, couvrant l'ensemble du cycle de vie produit, de l'idéation au post-lancement.</li>
+            <li>Collecte et intégration de la <strong>voix des clients</strong> à chaque étape du développement produit (discovery, conception, delivery, amélioration continue).</li>
+            <li><strong>Ownership de parcours et produits dédiés</strong> au sein du portefeuille bancaire digital (dont des parcours B2B et le projet en cours sur l'<strong>Assurance KASKO</strong>).</li>
+            <li>Conduite de <strong>recherches qualitatives et quantitatives</strong> auprès des particuliers ainsi que d'une large base de clients professionnels : <strong>micro-entreprises, PME et grandes entreprises (Corporate)</strong>.</li>
             <li>Collaboration étroite avec les équipes produit, design et business afin de garantir des <strong>décisions centrées client</strong> et alignées sur les <strong>enjeux business</strong>.</li>
           </ul>
           <div class="exp-tags">
             <span class="tag">Customer Journey Mapping</span>
-            <span class="tag">Banque B2B</span>
+            <span class="tag">Business & Retail Banking</span>
             <span class="tag">Voice of Customer</span>
             <span class="tag">Product Discovery</span>
             <span class="tag">Recherche Quali & Quanti</span>
@@ -1844,19 +2027,19 @@
             </div>
           </div>
           <ul class="exp-bullets">
-            <li>Conduite de <strong>recherches post-lancement</strong> sur les <strong>produits bancaires</strong> à destination des entreprises.</li>
-            <li>Évaluation et mesure de l'expérience client à l'aide des principaux <strong>indicateurs CX (CSAT, CES, NPS)</strong>.</li>
-            <li>Réalisation d'<strong>entretiens qualitatifs</strong> et animation de <strong>focus groups</strong> auprès de clients micro, PME et corporate, en formats <strong>online et présentiel</strong>.</li>
-            <li>Analyse des <strong>parcours clients</strong> et interprétation des <strong>données qualitatives et quantitatives</strong>.</li>
-            <li>Élaboration de <strong>reportings structurés</strong> et formulation de recommandations orientées <strong>amélioration continue</strong>.</li>
+            <li>Pilotage de recherches CX sur les produits <strong>Business Banking (Birbank Biznes)</strong> et <strong>Retail Banking (Birbank)</strong>, en phase de lancement et post-lancement, avec une forte spécialisation sur les segments <strong>micro-entreprises, PME et Corporate</strong>.</li>
+            <li><strong>Définition des objectifs de recherche</strong> pour chaque produit étudié et sélection de la <strong>méthodologie la plus adaptée (qualitative ou quantitative)</strong>.</li>
+            <li><strong>Conception et préparation des questionnaires, guides d'entretien et enquêtes clients</strong> afin de recueillir leurs retours et d'identifier précisément leurs <strong>besoins, attentes et points de friction</strong>.</li>
+            <li>Réalisation d'<strong>entretiens qualitatifs</strong>, animation de <strong>focus groups</strong> (online et présentiel) et suivi des principaux <strong>indicateurs CX (CSAT, CES, NPS)</strong>.</li>
+            <li>Analyse des <strong>parcours clients</strong>, élaboration de <strong>reportings structurés</strong> et formulation de recommandations orientées amélioration continue.</li>
             <li><strong>Encadrement et mentorat</strong> de stagiaires en Customer Experience Research.</li>
           </ul>
           <div class="exp-tags">
             <span class="tag">KPIs CX (NPS, CSAT, CES)</span>
+            <span class="tag">Questionnaires & Enquêtes</span>
             <span class="tag">Focus Groups</span>
-            <span class="tag">Entretiens Clients</span>
+            <span class="tag">Points de Friction</span>
             <span class="tag">Mentorat</span>
-            <span class="tag">Reporting & Recommandations</span>
           </div>
         </article>
 
@@ -1867,7 +2050,7 @@
               <h3 class="exp-role">Product Owner (Stage)</h3>
               <div class="exp-company">
                 <i class="fa-solid fa-building"></i>
-                <span>Kapital Bank / Birbank Business — Ventes aux PME et aux entreprises</span>
+                <span>Kapital Bank / Birbank Biznes — Ventes aux PME et aux entreprises</span>
                 <a href="https://birbank.business/" target="_blank" rel="noopener noreferrer">birbank.business ↗</a>
               </div>
             </div>
@@ -2033,6 +2216,79 @@
         </article>
 
       </div>
+
+      <!-- PANORAMA DES PROJETS ÉTUDIÉS CHEZ BIRBANK (BUSINESS & RETAIL) -->
+      <div class="projects-showcase">
+        <div class="projects-showcase-header">
+          <h3><i class="fa-solid fa-diagram-project"></i> Panorama des Projets & Produits Étudiés — Birbank</h3>
+          <p>Vue d'ensemble des produits digitaux analysés en tant que <strong>CX Researcher</strong> et <strong>CJM Researcher</strong> sur les marchés professionnels et particuliers.</p>
+        </div>
+
+        <div class="projects-method-banner">
+          <i class="fa-solid fa-clipboard-check"></i>
+          <div>
+            <strong>Démarche appliquée sur chaque projet :</strong> définition des <strong>objectifs de recherche</strong>, sélection de la <strong>méthodologie adaptée (qualitative ou quantitative)</strong> et préparation des <strong>questionnaires et enquêtes clients</strong> afin de recueillir leurs retours et de cartographier leurs <strong>besoins, attentes et points de friction</strong>.
+          </div>
+        </div>
+
+        <div class="projects-domain-grid">
+          <!-- COLONNE 1 : BUSINESS BANKING -->
+          <div class="project-domain-card">
+            <div class="project-domain-title">
+              <h4><i class="fa-solid fa-briefcase"></i> Business Banking — Birbank Biznes</h4>
+              <span class="domain-badge">Micro • PME • Corporate</span>
+            </div>
+
+            <div class="project-subgroups">
+              <div>
+                <span class="project-subgroup-label">Financement & Crédit Entreprise</span>
+                <ul class="project-list">
+                  <li><strong>Instant Loan</strong> : parcours de crédit instantané sur l'application mobile et le portail web Birbank Biznes.</li>
+                  <li><strong>Crédits traditionnels</strong> et <strong>Crédits agricoles (Agro Credit)</strong>.</li>
+                  <li><strong>Garanties bancaires</strong> à destination des entreprises.</li>
+                </ul>
+              </div>
+
+              <div>
+                <span class="project-subgroup-label">Paiements, Cartes & Fidélité B2B</span>
+                <ul class="project-list">
+                  <li><strong>Virements</strong> et <strong>HÖP</strong> (portail de paiement gouvernemental).</li>
+                  <li><strong>Birbank Biznes Bonus</strong> (programme de fidélité et d'avantages professionnels).</li>
+                  <li>Études produits dédiées : <strong>Carte de crédit Business</strong>, <strong>Carte de salaire</strong> et <strong>Carte étudiant</strong>.</li>
+                </ul>
+              </div>
+
+              <div>
+                <span class="project-subgroup-label">Relation & Valeur Client</span>
+                <ul class="project-list">
+                  <li><strong>CRM</strong> (gestion de la relation client) et <strong>CVM</strong> (<em>Customer Value Management</em>).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- COLONNE 2 : RETAIL BANKING -->
+          <div class="project-domain-card">
+            <div class="project-domain-title">
+              <h4><i class="fa-solid fa-mobile-screen-button"></i> Retail Banking — Birbank</h4>
+              <span class="domain-badge secondary">Particuliers</span>
+            </div>
+
+            <div class="project-subgroups">
+              <div>
+                <span class="project-subgroup-label">Assurance, Fiscalité & Avantages</span>
+                <ul class="project-list">
+                  <li><strong>Assurance KASKO</strong> <span class="status-pill">En cours</span></li>
+                  <li><strong>Analyse du parcours VAT / ƏDV</strong> (remboursement de la TVA sur achats).</li>
+                  <li><strong>Bir Bonus</strong> (programme de fidélité grand public).</li>
+                  <li><strong>Catégorie de bonus billets d'avion</strong> sur l'application Birbank.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -2207,9 +2463,10 @@
             <span class="skill-pill">Product Discovery</span>
             <span class="skill-pill">Backlog & User Stories</span>
             <span class="skill-pill">KPIs CX (NPS, CSAT, CES)</span>
-            <span class="skill-pill">Entretiens qualitatifs</span>
-            <span class="skill-pill">Animation de Focus Groups</span>
-            <span class="skill-pill">Benchmarks concurrentiels</span>
+            <span class="skill-pill">Questionnaires & Enquêtes</span>
+            <span class="skill-pill">Entretiens qualitatifs & Focus Groups</span>
+            <span class="skill-pill">Analyse des points de friction</span>
+            <span class="skill-pill">Business & Retail Banking</span>
           </div>
         </div>
 
