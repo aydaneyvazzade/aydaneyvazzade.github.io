@@ -100,7 +100,8 @@
     .hero-bio strong,
     .pillar-card p strong,
     .exp-bullets li strong,
-    .edu-details li strong,
+    .edu-module strong,
+    .edu-chip strong,
     .cert-item span strong {
       font-weight: 600;
       color: var(--text-primary);
@@ -300,7 +301,7 @@
       border-top: 1.5px solid var(--border-color);
     }
 
-    .stat-item strong {
+    .stat-item > strong {
       display: flex;
       align-items: center;
       gap: 0.45rem;
@@ -310,12 +311,12 @@
       color: var(--text-primary);
     }
 
-    .stat-item strong i {
+    .stat-item > strong i {
       font-size: 1.05rem;
       color: var(--accent-teal);
     }
 
-    .stat-item span {
+    .stat-item > span {
       font-size: 0.82rem;
       color: var(--text-muted);
       font-weight: 500;
@@ -721,53 +722,93 @@
     }
 
     /* ==========================================================================
-       SECTION FORMATION & CERTIFICATIONS
+       SECTION FORMATION & CERTIFICATIONS (FRISE CHRONOLOGIQUE & MOBILITÉ INTÉGRÉE)
        ========================================================================== */
-    .edu-grid {
+    .edu-timeline {
+      position: relative;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      margin-bottom: 2.5rem;
+      gap: 2rem;
+      padding-left: 2.25rem;
+      margin-bottom: 2.75rem;
+    }
+
+    .edu-timeline::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 0.75rem;
+      bottom: 0.75rem;
+      width: 2px;
+      background: var(--accent-primary);
+    }
+
+    .edu-step {
+      position: relative;
+    }
+
+    .edu-step::before {
+      content: "";
+      position: absolute;
+      left: -2.25rem;
+      top: 1.65rem;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--accent-primary);
+      border: 3px solid var(--bg-main);
+      box-shadow: 0 0 0 2px var(--accent-primary);
+      transform: translateX(2px);
+      z-index: 2;
+    }
+
+    .edu-step.step-current::before {
+      background: #ffffff;
+      border: 3.5px solid var(--accent-primary);
+      box-shadow: 0 0 0 3px rgba(29, 49, 83, 0.2);
     }
 
     .edu-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
-      border-left: 4px solid var(--bg-subtle);
       border-radius: var(--radius-md);
-      padding: 1.6rem;
+      padding: 1.75rem;
       box-shadow: var(--shadow-sm);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      transition: var(--transition);
+    }
+
+    .edu-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent-primary);
     }
 
     .edu-card.featured {
       border-left: 4px solid var(--accent-primary);
-      background: linear-gradient(180deg, #ffffff 0%, var(--bg-main) 100%);
     }
 
-    .edu-top {
-      margin-bottom: 1rem;
+    .edu-card.degree-main {
+      border-left: 4px solid var(--accent-teal);
     }
 
-    .edu-period {
-      font-size: 0.78rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--text-muted);
-      margin-bottom: 0.35rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
+    .edu-card-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding-bottom: 1rem;
+      margin-bottom: 1.15rem;
+      border-bottom: 1px solid var(--bg-subtle);
+    }
+
+    .edu-card-title-group {
+      max-width: 720px;
     }
 
     .edu-card h3 {
-      font-size: 1.08rem;
+      font-size: 1.14rem;
       font-weight: 800;
       color: var(--text-primary);
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.35rem;
     }
 
     .edu-school {
@@ -784,39 +825,191 @@
       font-size: 0.85rem;
     }
 
-    .edu-details {
-      margin-top: 0.85rem;
-      font-size: 0.9rem;
+    .edu-meta-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.3rem;
+      text-align: right;
+    }
+
+    .edu-period-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.26rem 0.72rem;
+      border-radius: var(--radius-sm);
+      background: var(--bg-subtle-soft);
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+    }
+
+    .edu-period-badge.active {
+      background: var(--accent-primary);
+      color: #ffffff;
+      border-color: var(--accent-primary);
+    }
+
+    .edu-place {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .edu-place i {
+      color: var(--accent-primary);
+    }
+
+    /* Grille interne des modules (2 colonnes sur desktop pour éviter les longues colonnes) */
+    .edu-modules-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.7rem;
+    }
+
+    .edu-module {
+      background: var(--bg-main);
+      border: 1px solid var(--bg-subtle);
+      border-left: 3px solid var(--accent-primary);
+      border-radius: var(--radius-sm);
+      padding: 0.7rem 0.9rem;
+      font-size: 0.89rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    .edu-module.full-span {
+      grid-column: 1 / -1;
+    }
+
+    .edu-module.secondary-accent {
+      border-left-color: var(--accent-teal);
+    }
+
+    /* Bandeau distinction académique (Note & Mémoire) */
+    .edu-distinction {
+      margin-top: 1.15rem;
+      background: var(--bg-subtle-soft);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 0.95rem 1.1rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem 1.5rem;
+    }
+
+    .edu-grade-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--accent-primary);
+      color: #ffffff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.35rem 0.8rem;
+      border-radius: var(--radius-sm);
+      flex-shrink: 0;
+    }
+
+    .edu-thesis {
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      flex: 1;
+      min-width: 260px;
+    }
+
+    /* Sous-branche rattachée à la Licence : Mobilité simultanée en Suisse (2023) */
+    .edu-branch {
+      margin-top: 1rem;
+      margin-left: 1.25rem;
+      padding-left: 1.35rem;
+      border-left: 2px dashed var(--accent-teal);
+      position: relative;
+    }
+
+    .edu-branch-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent-teal);
+      background: var(--bg-subtle-soft);
+      border: 1px solid var(--border-color);
+      padding: 0.25rem 0.7rem;
+      border-radius: var(--radius-sm);
+      margin-bottom: 0.85rem;
+    }
+
+    .edu-branch-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.15rem;
+    }
+
+    .edu-card.mobility-card {
+      background: linear-gradient(180deg, #ffffff 0%, var(--bg-main) 100%);
+      border-top: 3px solid var(--accent-teal);
+      padding: 1.4rem 1.5rem;
+    }
+
+    .edu-card.mobility-card .edu-card-header {
+      flex-direction: column;
+      gap: 0.5rem;
+      padding-bottom: 0.85rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .edu-card.mobility-card .edu-meta-right {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      text-align: left;
+      order: -1;
+    }
+
+    .edu-card.mobility-card h3 {
+      font-size: 1.04rem;
+    }
+
+    .edu-chips-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .edu-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 0.45rem 0.75rem;
+      font-size: 0.84rem;
       color: var(--text-secondary);
     }
 
-    .edu-details li {
-      padding-left: 1.1rem;
-      position: relative;
-      margin-bottom: 0.35rem;
-    }
-
-    .edu-details li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
+    .edu-chip i {
       color: var(--accent-primary);
-      font-weight: bold;
+      font-size: 0.78rem;
     }
 
-    .edu-highlight-box {
-      margin-top: 1rem;
-      padding: 0.8rem 1rem;
-      background: var(--bg-subtle);
-      border-left: 3px solid var(--accent-primary);
-      border-radius: var(--radius-sm);
-      font-size: 0.85rem;
-      color: var(--text-primary);
-    }
-
-    .edu-highlight-box i {
-      color: var(--accent-primary);
-      margin-right: 0.35rem;
+    .edu-modules-stack {
+      display: grid;
+      gap: 0.55rem;
     }
 
     .cert-wrapper {
@@ -857,25 +1050,28 @@
       padding-bottom: 0;
     }
 
-    .cert-item strong {
+    .cert-item > strong {
       display: flex;
       align-items: flex-start;
       gap: 0.5rem;
       font-size: 0.96rem;
       color: var(--text-primary);
+      margin-bottom: 0.25rem;
     }
 
-    .cert-item strong i {
+    .cert-item > strong i {
       color: var(--accent-primary);
-      margin-top: 0.22rem;
+      margin-top: 0.25rem;
       font-size: 0.88rem;
+      flex-shrink: 0;
     }
 
-    .cert-item span {
+    .cert-item > span {
       display: block;
       padding-left: 1.38rem;
       font-size: 0.85rem;
       color: var(--text-secondary);
+      line-height: 1.55;
     }
 
     /* ==========================================================================
@@ -1165,7 +1361,8 @@
         max-width: 240px;
       }
 
-      .edu-grid,
+      .edu-modules-grid,
+      .edu-branch-grid,
       .skills-grid {
         grid-template-columns: 1fr;
       }
@@ -1197,17 +1394,25 @@
         display: inline-flex;
       }
 
-      .timeline {
+      .timeline,
+      .edu-timeline {
         padding-left: 1.4rem;
       }
 
-      .exp-card::before {
+      .exp-card::before,
+      .edu-step::before {
         left: -1.4rem;
       }
 
-      .exp-meta {
+      .exp-meta,
+      .edu-meta-right {
         align-items: flex-start;
         text-align: left;
+      }
+
+      .edu-branch {
+        margin-left: 0.4rem;
+        padding-left: 0.9rem;
       }
 
       .hero-stats {
@@ -1609,66 +1814,109 @@
         <p>Un cursus universitaire trilingue alliant management, économie d'entreprise et transformation numérique des systèmes d'information.</p>
       </div>
 
-      <div class="edu-grid">
-        <!-- MASTER 1 S2IN -->
-        <div class="edu-card featured">
-          <div class="edu-top">
-            <span class="edu-period"><i class="fa-regular fa-calendar"></i> En cours • Annecy, France</span>
-            <h3>Master 1 — Systèmes d'Information et Innovation Numérique (S2IN)</h3>
-            <div class="edu-school"><i class="fa-solid fa-building-columns"></i> Université Savoie Mont Blanc — IAE Savoie Mont-Blanc</div>
-            <ul class="edu-details">
-              <li><strong>Systèmes d'information & transformation numérique :</strong> architecture des SI, gouvernance des données et digitalisation.</li>
-              <li><strong>Gestion de projet & innovation numérique :</strong> méthodes agiles, gestion des processus et conduite du changement.</li>
-              <li><strong>Analyse de données & statistiques appliquées :</strong> statistiques, analyse multivariée, clustering et visualisation.</li>
-              <li><strong>Outils et technologies numériques :</strong> SQL, R / RStudio et bases de données.</li>
-              <li><strong>Management & stratégie :</strong> management de l'innovation, stratégie digitale et gestion des organisations.</li>
-            </ul>
+      <!-- FRISE CHRONOLOGIQUE DES ÉTUDES SUPÉRIEURES -->
+      <div class="edu-timeline">
+
+        <!-- ÉTAPE 1 : MASTER 1 S2IN (EN COURS) -->
+        <div class="edu-step step-current">
+          <article class="edu-card featured">
+            <div class="edu-card-header">
+              <div class="edu-card-title-group">
+                <h3>Master 1 — Systèmes d'Information et Innovation Numérique (S2IN)</h3>
+                <div class="edu-school"><i class="fa-solid fa-building-columns"></i> Université Savoie Mont Blanc — IAE Savoie Mont-Blanc</div>
+              </div>
+              <div class="edu-meta-right">
+                <span class="edu-period-badge active"><i class="fa-regular fa-calendar-check"></i> En cours</span>
+                <span class="edu-place"><i class="fa-solid fa-location-dot"></i> Annecy, France</span>
+              </div>
+            </div>
+
+            <div class="edu-modules-grid">
+              <div class="edu-module"><strong>Systèmes d'information & transformation numérique :</strong> architecture des SI, gouvernance des données et digitalisation.</div>
+              <div class="edu-module"><strong>Gestion de projet & innovation numérique :</strong> méthodes agiles, gestion des processus et conduite du changement.</div>
+              <div class="edu-module"><strong>Analyse de données & statistiques appliquées :</strong> statistiques, analyse multivariée, clustering et visualisation.</div>
+              <div class="edu-module"><strong>Outils et technologies numériques :</strong> SQL, R / RStudio et bases de données.</div>
+              <div class="edu-module full-span"><strong>Management & stratégie :</strong> management de l'innovation, stratégie digitale et gestion des organisations.</div>
+            </div>
+          </article>
+        </div>
+
+        <!-- ÉTAPE 2 : LICENCE EN MANAGEMENT (2019 – 2023) + MOBILITÉ SUISSE INTÉGRÉE (FÉV – JUIN 2023) -->
+        <div class="edu-step">
+          <article class="edu-card degree-main">
+            <div class="edu-card-header">
+              <div class="edu-card-title-group">
+                <h3>Licence en Management</h3>
+                <div class="edu-school"><i class="fa-solid fa-building-columns"></i> Université Économique d'État d'Azerbaïdjan (UNEC)</div>
+              </div>
+              <div class="edu-meta-right">
+                <span class="edu-period-badge"><i class="fa-regular fa-calendar"></i> 15/09/2019 – 23/07/2023</span>
+                <span class="edu-place"><i class="fa-solid fa-location-dot"></i> Bakou, Azerbaïdjan</span>
+              </div>
+            </div>
+
+            <div class="edu-modules-grid">
+              <div class="edu-module secondary-accent"><strong>Hard skills :</strong> Gestion de projet, prototypage sous Figma, analyse et synthèse de l'information, MS Office, Canva.</div>
+              <div class="edu-module secondary-accent"><strong>Soft skills :</strong> Présentation orale et écrite, travail en équipe, communication, networking et participation à des événements académiques.</div>
+            </div>
+
+            <div class="edu-distinction">
+              <span class="edu-grade-pill"><i class="fa-solid fa-award"></i> Diplôme final : 93 / 100</span>
+              <div class="edu-thesis">
+                <strong>Mémoire :</strong> « Principes et valeurs de management au sein des entreprises et des organisations dans deux pays : l'Azerbaïdjan et la Suisse ».
+              </div>
+            </div>
+          </article>
+
+          <!-- SOUS-BRANCHE CHRONOLOGIQUE : MOBILITÉ EN SUISSE DURANT LA LICENCE -->
+          <div class="edu-branch">
+            <div class="edu-branch-label">
+              <i class="fa-solid fa-code-branch"></i> Mobilité internationale intégrée au cursus (Semestre de printemps 2023)
+            </div>
+
+            <div class="edu-branch-grid">
+              <!-- ÉCHANGE HES-SO -->
+              <article class="edu-card mobility-card">
+                <div class="edu-card-header">
+                  <div class="edu-card-title-group">
+                    <h3>Économie d'Entreprise (Échange académique de 6 mois)</h3>
+                    <div class="edu-school"><i class="fa-solid fa-building-columns"></i> Haute École Spécialisée de Suisse Occidentale (HES-SO)</div>
+                  </div>
+                  <div class="edu-meta-right">
+                    <span class="edu-period-badge"><i class="fa-regular fa-calendar"></i> 20/02/2023 – 17/06/2023</span>
+                    <span class="edu-place"><i class="fa-solid fa-location-dot"></i> Neuchâtel, Suisse</span>
+                  </div>
+                </div>
+
+                <div class="edu-chips-grid">
+                  <span class="edu-chip"><i class="fa-solid fa-check"></i> <strong>Gestion publique</strong></span>
+                  <span class="edu-chip"><i class="fa-solid fa-check"></i> <strong>Marketing digital</strong> et <strong>marketing industriel</strong></span>
+                  <span class="edu-chip"><i class="fa-solid fa-check"></i> <strong>Relations publiques (RP)</strong> et <strong>sponsoring</strong></span>
+                </div>
+              </article>
+
+              <!-- DIPLÔME FRANÇAIS C1 -->
+              <article class="edu-card mobility-card">
+                <div class="edu-card-header">
+                  <div class="edu-card-title-group">
+                    <h3>Diplôme de Langue et Civilisation Françaises — Niveau C1</h3>
+                    <div class="edu-school"><i class="fa-solid fa-building-columns"></i> ILCF — Université de Neuchâtel</div>
+                  </div>
+                  <div class="edu-meta-right">
+                    <span class="edu-period-badge"><i class="fa-regular fa-calendar"></i> 20/02/2023 – 17/06/2023</span>
+                    <span class="edu-place"><i class="fa-solid fa-location-dot"></i> Neuchâtel, Suisse</span>
+                  </div>
+                </div>
+
+                <div class="edu-modules-stack">
+                  <div class="edu-module">Renforcement approfondi en <strong>compréhension orale et écrite (niveau C1)</strong>.</div>
+                  <div class="edu-module"><strong>Production orale et écrite académique</strong>, <strong>argumentation, débat et présentation publique</strong> en français.</div>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
 
-        <!-- LICENCE MANAGEMENT UNEC -->
-        <div class="edu-card">
-          <div class="edu-top">
-            <span class="edu-period"><i class="fa-regular fa-calendar"></i> 15/09/2019 – 23/07/2023 • Bakou, Azerbaïdjan</span>
-            <h3>Licence en Management</h3>
-            <div class="edu-school"><i class="fa-solid fa-building-columns"></i> Université Économique d'État d'Azerbaïdjan (UNEC)</div>
-            <ul class="edu-details">
-              <li><strong>Hard skills :</strong> Gestion de projet, prototypage sous Figma, analyse et synthèse de l'information, MS Office, Canva.</li>
-              <li><strong>Soft skills :</strong> Présentation orale et écrite, travail en équipe, communication, networking et participation à des événements académiques.</li>
-            </ul>
-          </div>
-          <div class="edu-highlight-box">
-            <i class="fa-solid fa-award"></i> <strong>Diplôme final : 93 / 100</strong><br />
-            <em>Mémoire :</em> « Principes et valeurs de management au sein des entreprises et des organisations dans deux pays : l'Azerbaïdjan et la Suisse ».
-          </div>
-        </div>
-
-        <!-- ÉCHANGE HES-SO -->
-        <div class="edu-card">
-          <div class="edu-top">
-            <span class="edu-period"><i class="fa-regular fa-calendar"></i> 20/02/2023 – 17/06/2023 • Neuchâtel, Suisse</span>
-            <h3>Économie d'Entreprise (Échange académique de 6 mois)</h3>
-            <div class="edu-school"><i class="fa-solid fa-building-columns"></i> Haute École Spécialisée de Suisse Occidentale (HES-SO)</div>
-            <ul class="edu-details">
-              <li><strong>Gestion publique</strong></li>
-              <li><strong>Marketing digital</strong> et <strong>marketing industriel</strong></li>
-              <li><strong>Relations publiques (RP)</strong> et <strong>sponsoring</strong></li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- DIPLÔME FRANÇAIS C1 -->
-        <div class="edu-card">
-          <div class="edu-top">
-            <span class="edu-period"><i class="fa-regular fa-calendar"></i> 20/02/2023 – 17/06/2023 • Neuchâtel, Suisse</span>
-            <h3>Diplôme de Langue et Civilisation Françaises — Niveau C1</h3>
-            <div class="edu-school"><i class="fa-solid fa-building-columns"></i> ILCF — Université de Neuchâtel</div>
-            <ul class="edu-details">
-              <li>Renforcement approfondi en <strong>compréhension orale et écrite (niveau C1)</strong>.</li>
-              <li><strong>Production orale et écrite académique</strong>, <strong>argumentation, débat et présentation publique</strong> en français.</li>
-            </ul>
-          </div>
-        </div>
       </div>
 
       <!-- CERTIFICATIONS + ZONE IMAGE 3 -->
